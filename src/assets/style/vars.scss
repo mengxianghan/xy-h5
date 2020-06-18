@@ -1,0 +1,61 @@
+// Color Palette
+$black: #000;
+$white: #fff;
+$gray-1: #f7f8fa;
+$gray-2: #f2f3f5;
+$gray-3: #ebedf0;
+$gray-4: #dcdee0;
+$gray-5: #c8c9cc;
+$gray-6: #969799;
+$gray-7: #646566;
+$gray-8: #323233;
+$red: #f5222d;
+$blue: #1890ff;
+$orange: #faad14;
+$green: #52c41a;
+$primary: #ff744d;
+$body-bg: #f8f8f8;
+
+// Border
+$border-color: $gray-3;
+$border-width-base: 1px;
+$border-radius-sm: 2px;
+$border-radius-md: 4px;
+$border-radius-lg: 8px;
+$border-radius-max: 999px;
+
+// Color
+$color-primary: $primary;
+$color-danger: $red;
+$color-warning: $orange;
+$color-success: $green;
+$color-info: $blue;
+
+// Font
+$font-size-sm: 12px;
+$font-size-md: 14px;
+$font-size-lg: 16px;
+$price-integer-font-family: Avenir-Heavy, PingFang SC, Helvetica Neue, Arial, sans-serif;
+
+// Spacing
+$spacing-base: 4px;
+$spacing-xs: $spacing-base * 2;
+$spacing-sm: $spacing-base * 3;
+$spacing-md: $spacing-base * 4;
+$spacing-lg: $spacing-base * 6;
+$spacing-xl: $spacing-base * 8;
+
+// Shadow
+$box-shadow-base: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+// Text
+$text-color: rgba(0, 0, 0, .65);
+$text-secondary-color: rgba(0, 0, 0, 0.45);
+$text-heading-color: rgba(0, 0, 0, .85);
+$text-disabled-color: rgba(0, 0, 0, .25);
+$text-primary-color: $color-primary;
+$text-danger-color: $color-danger;
+$text-warning-color: $color-warning;
+$text-success-color: $color-success;
+$text-info-color: $color-info;
+
