@@ -1,9 +1,10 @@
-# admin-template
+# h5 项目模板
 
 ## 安装依赖
 ```
 npm install
 or
+# 推荐使用
 npm install --registry https://registry.npm.taobao.org
 ```
 
@@ -12,25 +13,17 @@ npm install --registry https://registry.npm.taobao.org
 npm run serve
 ```
 
-### 打包-生产
+### 生产环境打包
 ```
 npm run build
 ```
 
-### 打包-开发
+### 测试环境打包
 ```
-npm run build:dev
+npm run build:test
 ```
 
-### 打包-性能分析
+### 性能分析包
 ```
 npm run build:report
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

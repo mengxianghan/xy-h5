@@ -29,19 +29,16 @@ module.exports = {
             poll: true
         }
     },
-    configureWebpack: config => {
-        config.externals = isProd ? assetsCDN.externals : {}
-
-        if (isProd) {
-            config.plugins = [
-                new CompressionPlugin({
-                    filename: '[path].gz[query]',
-                    test: /\.(js|css)$/,
-                    threshold: 10240,
-                    deleteOriginalAssets: false
-                })
-            ]
-        }
+    configureWebpack: {
+        externals: isProd ? assetsCDN.externals : {},
+        plugins: [
+            new CompressionPlugin({
+                test: /\.(js|css)$/,
+                filename: '[path].gz[query]',
+                threshold: 10240,
+                deleteOriginalAssets: false
+            })
+        ]
     },
     chainWebpack: config => {
         config
