@@ -1,5 +1,5 @@
 const api = {}
-const registerApi = (req) => {
+const register = (req) => {
     req.keys().forEach(filename => {
         const name = filename.replace(/^\.\/(.*)\.\w+$/, '$1')
         const options = () => {
@@ -10,6 +10,6 @@ const registerApi = (req) => {
     })
 }
 
-registerApi(require.context('./modules', false, /[A-Za-z]+\.(js)$/))
+register(require.context('./modules', false, /[A-Za-z]+\.(js)$/))
 
 export default api
