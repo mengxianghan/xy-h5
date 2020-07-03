@@ -1,6 +1,6 @@
 import jschardet from 'jschardet'
 import axios from 'axios'
-import {Toast} from 'vant'
+import {message} from 'ant-design-vue'
 
 const instance = axios.create()
 const CancelToken = axios.CancelToken
@@ -28,13 +28,17 @@ const cancelPending = (config) => {
  * 请求拦截
  */
 instance.interceptors.request.use(req => {
-    cancelPending(req)
-    req.cancelToken = new CancelToken((c) => {
-        pending.push({
-            umet: `${req.url}&${req.method}`,
-            cancel: c
-        })
-    })
+    req.headers = {
+        ...req.headers,
+        'AUTH-TOKEN': 'Bearer '
+    }
+    // cancelPending(req)
+    // req.cancelToken = new CancelToken((c) => {
+    //     pending.push({
+    //         umet: `${req.url}&${req.method}`,
+    //         cancel: c
+    //     })
+    // })
     return req
 }, err => {
     return Promise.reject(err)
@@ -47,10 +51,10 @@ instance.interceptors.response.use(res => {
     // 错误处理
     if (res.data.code && res.data.code !== '200') {
         if (res.data.msg) {
-            Toast(res.data.msg)
+            message.error(res.data.msg)
         }
     }
-    cancelPending(res.config)
+    // cancelPending(res.config)
     return res
 }, err => {
     return Promise.reject(err)
