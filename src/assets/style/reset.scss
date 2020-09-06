@@ -13,26 +13,10 @@ body,
 
 body {
     font: normal normal normal 14px/1.5 'PingFang SC';
-    background: $body-bg;
 }
 
 img, video, audio, iframe {
     vertical-align: middle;
-}
-
-a[title="站长统计"] {
-    display: none;
-}
-
-.van-image {
-    width: 100%;
-    height: 100%;
-}
-
-.van-image__img,
-.van-image__loading,
-.van-image__error {
-    border-radius: inherit;
 }
 
 input, textarea {

@@ -1,44 +1,12 @@
 import jschardet from 'jschardet'
 import axios from 'axios'
-import {message} from 'ant-design-vue'
 
 const instance = axios.create()
-const CancelToken = axios.CancelToken
-let pending = []
-
-/**
- * 取消请求
- * @param config
- */
-const cancelPending = (config) => {
-    pending.forEach((item, index) => {
-        if (config) {
-            if (item.umet === `${config.url}&${config.method}`) {
-                item.cancel() // 取消请求
-                pending.splice(index, 1) // 移除当前请求记录
-            }
-        } else {
-            item.cancel() // 取消请求
-            pending.splice(index, 1) // 移除当前请求记录
-        }
-    })
-}
 
 /**
  * 请求拦截
  */
 instance.interceptors.request.use(req => {
-    req.headers = {
-        ...req.headers,
-        'AUTH-TOKEN': 'Bearer '
-    }
-    // cancelPending(req)
-    // req.cancelToken = new CancelToken((c) => {
-    //     pending.push({
-    //         umet: `${req.url}&${req.method}`,
-    //         cancel: c
-    //     })
-    // })
     return req
 }, err => {
     return Promise.reject(err)
@@ -48,13 +16,6 @@ instance.interceptors.request.use(req => {
  * 响应拦截
  */
 instance.interceptors.response.use(res => {
-    // 错误处理
-    if (res.data.code && res.data.code !== '200') {
-        if (res.data.msg) {
-            message.error(res.data.msg)
-        }
-    }
-    // cancelPending(res.config)
     return res
 }, err => {
     return Promise.reject(err)

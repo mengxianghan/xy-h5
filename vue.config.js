@@ -3,17 +3,24 @@ const isProd = process.env.NODE_ENV === 'production'
 
 const assetsCDN = {
     externals: {},
-    css: [],
-    js: []
+    css: {
+        env: [
+            '//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css'
+        ]
+    },
+    js: {
+        env: [],
+        production: []
+    }
 }
 
 module.exports = {
-    publicPath: '/',
-    outputDir: 'dist',
+    publicPath: process.env.VUE_APP_PUBLIC_PATH,
+    outputDir: process.env.VUE_APP_OUTPUT_DIR,
     assetsDir: `static`,
     devServer: {
         host: '0.0.0.0',
-        port: 9002,
+        port: 8080,
         /*proxy: {
             '/': {
                 target: 'http://192.168.1.50:8070',
@@ -44,10 +51,10 @@ module.exports = {
         config
             .plugin('html')
             .tap(args => {
-                args[0].title = '53助手'
+                args[0].title = process.env.VUE_APP_TITLE
                 args[0].cdn = {}
-                args[0].cdn.css = isProd ? assetsCDN.css : []
-                args[0].cdn.js = isProd ? assetsCDN.js : []
+                args[0].cdn.css = getAssetsCDN('css')
+                args[0].cdn.js = getAssetsCDN('js')
                 return args
             })
     },
@@ -73,4 +80,24 @@ module.exports = {
             }
         }
     }
+}
+
+/**
+ * 获取对应的 CDN 资源
+ * @param key
+ * @returns {[]}
+ */
+const getAssetsCDN = (key) => {
+    let res = []
+    const data = assetsCDN[key]
+    if (data.env) {
+        res = data.env
+    }
+    if (data[process.env.NODE_ENV]) {
+        res = [
+            ...res,
+            ...data[process.env.NODE_ENV]
+        ]
+    }
+    return res
 }

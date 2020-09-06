@@ -3,7 +3,7 @@
  * @param mobile
  * @returns {boolean}
  */
-export function mobile(mobile) {
+export function isMobile(mobile) {
     return /0?(13|14|15|17|18|19)[0-9]{9}/.test(mobile)
 }
 
@@ -12,7 +12,7 @@ export function mobile(mobile) {
  * @param str
  * @returns {boolean}
  */
-export function empty(str) {
+export function isEmpty(str) {
     return str.trim() === '' ? false : true
 }
 
@@ -21,7 +21,7 @@ export function empty(str) {
  * @param url
  * @returns {boolean}
  */
-export function url(url) {
+export function isUrl(url) {
     return /^(((ht|f)tps?):\/\/)?[\w-]+(\.[\w-]+)+([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?$/.test(url)
 }
 
@@ -29,25 +29,21 @@ export function url(url) {
  * 验证微信
  * @returns {boolean}
  */
-export function wechat() {
-    return /\bMicroMessenger\b/g.test(window.navigator.userAgent)
-}
-
-export function weixin() {
+export function isWeixin() {
     return /\bMicroMessenger\b/g.test(window.navigator.userAgent)
 }
 
 /**
  * 验证 ios
  */
-export function ios() {
+export function isIos() {
     return /ios/g.test(window.navigator.userAgent.toLocaleLowerCase())
 }
 
 /**
  * 验证 android
  */
-export function android() {
+export function isAndroid() {
     return /android/g.test(window.navigator.userAgent.toLocaleLowerCase())
 }
 
@@ -56,6 +52,6 @@ export function android() {
  * @param email
  * @returns {boolean}
  */
-export function email(email) {
+export function isEmail(email) {
     return /\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}/g.test(email)
 }
