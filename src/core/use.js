@@ -17,6 +17,11 @@ if (process.env.VUE_APP_DEBUGGER === 'true') {
     Vue.use(new VConsole())
 }
 
+// mock
+if (process.env.VUE_APP_MOCK === 'true') {
+    require('@/mock')
+}
+
 window.$xy = Vue.prototype.$xy = {
     api,
     util,

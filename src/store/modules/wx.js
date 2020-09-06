@@ -1,3 +1,5 @@
+import wx from 'weixin-js-sdk'
+
 const state = {
     wxConfig: {}
 }
@@ -15,7 +17,7 @@ const actions = {
      */
     async setConfig({commit}, url) {
         // 获取微信签名
-        const {code, data} = await window.$zs.api.wechat.getSignature({
+        const {code, data} = await window.$xy.api.wx.getWxConfig({
             url: encodeURIComponent(url)
         })
         if (code === '200') {
