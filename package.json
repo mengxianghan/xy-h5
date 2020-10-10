@@ -1,12 +1,14 @@
 {
   "name": "h5-template",
   "version": "1.0.0",
+  "description": "h5 项目模板",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "vue-cli-service serve --mode local",
+    "build:dev": "vue-cli-service build --mode dev",
     "build:test": "vue-cli-service build --mode test",
-    "build:report": "vue-cli-service build --mode production --report"
+    "build:prod": "vue-cli-service build --mode prod",
+    "build:report": "vue-cli-service build --mode prod --report"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -17,7 +19,7 @@
     "lodash": "^4.17.15",
     "mockjs2": "^1.0.8",
     "qs": "^6.9.2",
-    "vant": "^2.8.3",
+    "vant": "^2.10.9",
     "vue": "^2.6.11",
     "vue-clipboard2": "^0.3.1",
     "vue-router": "^3.1.6",
