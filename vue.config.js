@@ -6,12 +6,12 @@ const assetsCDN = {
     css: {
         env: [
             '//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css',
-            'https://cdn.jsdelivr.net/npm/video.js@7.8.4/dist/video-js.min.css'
+            '//cdn.jsdelivr.net/npm/video.js@7.8.4/dist/video-js.min.css'
         ]
     },
     js: {
         env: [
-            'https://cdn.jsdelivr.net/npm/video.js@7.8.4/dist/video.min.js'
+            '//cdn.jsdelivr.net/npm/video.js@7.8.4/dist/video.min.js'
         ],
         production: []
     }
