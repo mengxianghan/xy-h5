@@ -1,12 +1,11 @@
 import Vue from 'vue'
 import '@/components'
-import './vant'
 import api from '@/api'
 import * as util from '@/utils/util'
 import * as validate from '@/utils/validate'
 import 'lib-flexible'
-import './permission'
-// import 'vant/lib/index.less'
+import '@/core/vant'
+import '@/core/permission'
 import '@/assets/style/index.scss'
 
 //开启调试

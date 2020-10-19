@@ -27,7 +27,7 @@ npm run build:test
 
 ### 预生产环境
 ```
-npm run build:test
+npm run build:pre
 ```
 
 ### 生产环境

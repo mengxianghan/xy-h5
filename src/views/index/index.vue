@@ -5,18 +5,12 @@
 -->
 <template>
     <div>
-        <van-cell-group>
-            <van-cell title="视频"
-                      is-link
-                      :to="{path:'/video'}"></van-cell>
-        </van-cell-group>
+        h5 模板
     </div>
 </template>
 
 <script>
-    export default {
-        name: "hello"
-    }
+    export default {}
 </script>
 
 <style lang="scss" scoped>
