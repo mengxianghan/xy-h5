@@ -1,6 +1,26 @@
 const CompressionPlugin = require('compression-webpack-plugin')
 const isProd = process.env.NODE_ENV === 'production'
 
+/**
+ * 获取对应的 CDN 资源
+ * @param key
+ * @returns {[]}
+ */
+const getAssetsCDN = (key) => {
+    let res = []
+    const data = assetsCDN[key]
+    if (data.env) {
+        res = data.env
+    }
+    if (data[process.env.NODE_ENV]) {
+        res = [
+            ...res,
+            ...data[process.env.NODE_ENV]
+        ]
+    }
+    return res
+}
+
 const assetsCDN = {
     externals: {},
     css: {
@@ -83,24 +103,4 @@ module.exports = {
             }
         }
     }
-}
-
-/**
- * 获取对应的 CDN 资源
- * @param key
- * @returns {[]}
- */
-const getAssetsCDN = (key) => {
-    let res = []
-    const data = assetsCDN[key]
-    if (data.env) {
-        res = data.env
-    }
-    if (data[process.env.NODE_ENV]) {
-        res = [
-            ...res,
-            ...data[process.env.NODE_ENV]
-        ]
-    }
-    return res
 }
