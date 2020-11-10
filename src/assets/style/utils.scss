@@ -12,7 +12,7 @@
 
 // Color
 @each $class, $value in (primary, $text-color-primary),
-        (blue, $text-color-blue),
+        (green, $text-color-green),
         (red, $text-color-red) {
     .text-#{$class} {
         color: $value !important;
