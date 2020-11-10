@@ -25,13 +25,14 @@ const assetsCDN = {
     externals: {},
     css: {
         env: [
-            '//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css',
-            '//cdn.jsdelivr.net/npm/video.js@7.8.4/dist/video-js.min.css'
+            'https://g.alicdn.com/de/prismplayer/2.8.2/skins/default/aliplayer-min.css',
+            'https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css'
         ]
     },
     js: {
         env: [
-            '//cdn.jsdelivr.net/npm/video.js@7.8.4/dist/video.min.js'
+            'https://g.alicdn.com/de/prismplayer/2.8.2/aliplayer-min.js',
+            //'https://g.alicdn.com/de/prismplayer/2.8.2/aliplayer-h5-min.js'
         ],
         production: []
     }

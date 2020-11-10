@@ -1,5 +1,130 @@
 /**
  * @Author: 孟祥涵
- * @Date: 2020-10-19
- * @Description: 皮肤
+ * @Date: 2020-10-16
+ * @Description: theme
  */
+
+// Button
+.van-button {
+    &--primary {
+        &-gradient {
+            &:not(.van-button--plain) {
+                border: 0;
+                background-image: $button-primary-bg-gradient-color;
+                color: #fff;
+                box-shadow: 0px 7px 6px 0px rgba(250, 100, 0, 0.14);
+            }
+
+            &.van-button--plain {
+                border: currentColor solid 1px;
+                color: $color-primary;
+            }
+        }
+    }
+
+    &--member {
+        $text-color: #b27d3e;
+
+        &:not(.van-button--plain) {
+            border: 0;
+            background: linear-gradient(125deg, #ffecb9 0%, #f5bb83 100%);
+            color: $text-color;
+            box-shadow: 0px 11px 9px -6px rgba(250, 159, 0, 0.19);
+        }
+
+        &.van-button--plain {
+            border: currentColor solid 1px;
+            color: $text-color;
+        }
+    }
+
+    &--disabled {
+        $bg-color: #f1f1f1;
+        $text-color: #c5cad4;
+
+        background: $bg-color !important;
+        border-color: $bg-color !important;
+        box-shadow: none !important;
+        color: $text-color !important;
+    }
+}
+
+// Dialog
+.van-dialog {
+
+    &--round-button {
+        .van-dialog {
+            &__message {
+                color: $text-color-secondary;
+            }
+
+            &__footer {
+                padding: 0 30px 20px;
+            }
+
+            &__cancel,
+            &__confirm {
+                height: 40px;
+            }
+        }
+
+        .van-goods-action-button {
+            &--first,
+            &--last {
+                border-radius: $border-radius-round;
+            }
+
+            &--warning {
+                margin-right: $spacing-md;
+            }
+
+            &--warning {
+                background: transparent;
+                border: $button-primary-bg-color solid 1px;
+                color: $text-color-primary;
+            }
+        }
+    }
+}
+
+// Empty
+.van-empty {
+    &__image {
+        width: 170px;
+        height: 170px;
+    }
+
+    &__bottom {
+        margin-top: $spacing-md;
+    }
+
+    &__description {
+        color: #b2b2b2;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+}
+
+// Image
+.van-image {
+    vertical-align: middle;
+}
+
+// Overlay
+.van-overlay {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+// GoodsAction
+.van-goods-action {
+    &-button {
+        &--last {
+            margin-right: 16px;
+        }
+
+        &--first {
+            margin-left: 16px;
+        }
+    }
+}

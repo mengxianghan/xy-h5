@@ -1,12 +1,13 @@
 import router from '@/router'
 import store from '@/store'
+import {isWeixin} from "@/utils/validate"
 
 router.beforeEach((to, from, next) => {
     const {href} = router.resolve(to)
     const url = location.origin + href
 
     // 微信
-    if (window.$xy.validate.isWeixin()) {
+    if (isWeixin()) {
         store.dispatch('wx/setConfig', url)
     }
     store.dispatch('wx/setConfig', url)

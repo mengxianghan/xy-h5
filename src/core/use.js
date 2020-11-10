@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import '@/components'
 import api from '@/api'
-import * as util from '@/utils/util'
-import * as validate from '@/utils/validate'
 import 'lib-flexible'
 import '@/core/vant'
 import '@/core/permission'
@@ -19,8 +17,4 @@ if (process.env.VUE_APP_MOCK === 'true') {
     require('@/mock')
 }
 
-window.$xy = Vue.prototype.$xy = {
-    api,
-    util,
-    validate
-}
+window.$api = Vue.prototype.$api = api

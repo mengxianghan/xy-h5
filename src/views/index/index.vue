@@ -1,18 +1,29 @@
 <!--
- * @Author: MengXianghan
- * @Date: 2020-10-04
+ * @Author: 孟祥涵
+ * @Date: 2020-11-01
  * @Description: index
 -->
 <template>
-    <div>
+    <wrapper>
         h5 模板
-    </div>
+    </wrapper>
 </template>
 
 <script>
-    export default {}
+    export default {
+        data() {
+            return {}
+        },
+        computed: {},
+        watch: {},
+        created() {
+
+        },
+        mounted() {
+        },
+        methods: {}
+    }
 </script>
 
 <style lang="scss" scoped>
-
 </style>
