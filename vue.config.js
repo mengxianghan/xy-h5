@@ -22,19 +22,39 @@ const getAssetsCDN = (key) => {
 }
 
 const assetsCDN = {
-    externals: {},
+    externals: {
+        'vue': 'Vue',
+        'vuex': 'Vuex',
+        'vue-router': 'VueRouter',
+        'axios': 'axios',
+        'lodash': '_',
+        'jschardet': 'jschardet',
+        'dayjs': 'dayjs',
+        'vant': 'Vant',
+        'weixin-js-sdk': 'wx',
+        'video.js': 'videojs'
+    },
     css: {
         env: [
-            'https://g.alicdn.com/de/prismplayer/2.8.2/skins/default/aliplayer-min.css',
-            'https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css'
+            'https://cdn.jsdelivr.net/npm/video.js@7.11.0/dist/video-js.min.css'
         ]
     },
     js: {
         env: [
-            'https://g.alicdn.com/de/prismplayer/2.8.2/aliplayer-min.js',
-            //'https://g.alicdn.com/de/prismplayer/2.8.2/aliplayer-h5-min.js'
+            'https://cdn.jsdelivr.net/npm/lib-flexible@0.3.2/flexible.min.js',
+            'https://cdn.jsdelivr.net/npm/video.js@7.11.0/dist/video.min.js'
         ],
-        production: []
+        production: [
+            'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js',
+            'https://cdn.jsdelivr.net/npm/vuex@3.1.3/dist/vuex.min.js',
+            'https://cdn.jsdelivr.net/npm/vue-router@3.1.6/dist/vue-router.min.js',
+            'https://cdn.jsdelivr.net/npm/axios@0.19.2/dist/axios.min.js',
+            'https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js',
+            'https://cdn.jsdelivr.net/npm/jschardet@2.1.1/dist/jschardet.min.js',
+            'https://cdn.jsdelivr.net/npm/dayjs@1.9.6/dayjs.min.js',
+            'https://cdn.jsdelivr.net/npm/vant@2.10.14/lib/index.min.js',
+            'https://cdn.jsdelivr.net/npm/weixin-js-sdk@1.6.0/index.min.js'
+        ]
     }
 }
 

@@ -1,112 +1,165 @@
 <!--
  * @Author: 孟祥涵
- * @Date: 2020-11-02
+ * @Date: 2020-11-20
  * @Description: VideoPlayer
 -->
 <template>
     <div class="video-player">
-        <div class="video-player__box">
-        </div>
-        <div :id="id"></div>
+        <video ref="VideoPlayer"
+               class="video-js xy-player"></video>
     </div>
 </template>
 
 <script>
-    import {guid, toTime} from '@/utils/util'
+    import videojs from 'video.js'
 
     export default {
         name: "VideoPlayer",
+        props: {
+            options: {
+                type: Object,
+                default() {
+                    return {}
+                }
+            }
+        },
         data() {
             return {
-                id: `video-player-${guid()}`,
-                player: null,
-                video: null,
-                paused: true,
-                currentTime: 0,
-                duration: 0,
-                buffered: 0
+                player: null
             }
         },
-        computed: {
-            time() {
-                return `${toTime(this.currentTime)}/${toTime(this.duration)}`
-            },
-            portionPercent() {
-                return `${this.currentTime / this.duration * 100}%`
-            },
-            bufferedPercent() {
-                return `${this.buffered / this.duration * 100}%`
-            }
-        },
+        computed: {},
         watch: {},
         created() {
-
+            this.$once('hook:beforeDestroy', () => {
+                this.onDestroy()
+            })
         },
         mounted() {
-            this.initPlayer()
+            this.init()
         },
         methods: {
             /**
-             * 初始化播放器
+             * 初始化
              */
-            initPlayer() {
-                const {id} = this
-                const player = new Aliplayer({
-                    id,
-                    width: '100%',
-                    height: '210px',
-                    autoplay: false,
-                    source: 'http://cdn.xuanyunet.com/video.mp4',
-                    cover: 'https://img.alicdn.com/tps/TB1EXIhOFXXXXcIaXXXXXXXXXXX-760-340.jpg',
-                    skinLayout: false
-                }, (player) => {
-                    const video = document.getElementById(this.id).getElementsByTagName('video')[0]
-                    this.video = video
-                })
-
-                player.on('ready', () => {
-                    this.duration = player.getDuration()
-                })
-
-                player.on('play', () => {
-                    this.paused = false
-                })
-
-                player.on('pause', () => {
-                    this.paused = true
-                })
-
-                player.on('timeupdate', (e) => {
-                    this.currentTime = player.getCurrentTime()
-                    if (this.buffered < this.duration) this.buffered = this.video.buffered.end(0)
-                })
+            init() {
+                const player = videojs(this.$refs.VideoPlayer,
+                    this.options,
+                    function onPlayerReady() {
+                        // console.log('onPlayerReady')
+                    }
+                )
 
                 this.player = player
             },
             /**
-             * 播放
+             * 销毁
              */
-            handlePlay() {
-                this.player.play()
-            },
-            /**
-             * 暂停
-             */
-            handlePause() {
-                this.player.pause()
+            onDestroy() {
+                const {player} = this
+                if (player) {
+                    player.dispose()
+                }
             }
         }
     }
 </script>
 
 <style lang="scss" scoped>
-    $control-height: 40px;
-
     .video-player {
-        position: relative;
+        width: 100%;
+    }
 
-        &__box {
+    ::v-deep {
+        .xy-player {
+            &.video-js {
 
+                // 大播放按钮
+                .vjs-big-play-button {
+                    background-color: rgba(0, 0, 0, .65);
+                    width: 40px;
+                    height: 40px;
+                    padding: 0;
+                    border: 0;
+                    border-radius: 10em;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate3d(-50%, -50%, 0);
+                    font-size: 24px;
+
+                    .vjs-icon-placeholder {
+                        line-height: 1;
+
+                        &:before {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+                }
+
+                // 音量
+                .vjs-volume-bar {
+                    &.vjs-slider-horizontal {
+                        height: 2px;
+
+                        .vjs-volume-level {
+                            height: 2px;
+
+                            &:before {
+                                top: 50%;
+                                transform: translate3d(0, -50%, 0);
+                            }
+                        }
+                    }
+
+                    &.vjs-slider-vertical {
+                        width: 2px;
+
+                        .vjs-volume-level {
+                            width: 2px;
+
+                            &:before {
+                                left: 50%;
+                                transform: translate3d(-50%, 0, 0);
+                            }
+                        }
+                    }
+                }
+
+                // 时间
+                .vjs-current-time,
+                .vjs-time-divider,
+                .vjs-duration {
+                    display: initial;
+                }
+
+                .vjs-current-time {
+                    padding-right: 2px;
+                }
+
+                .vjs-duration {
+                    padding-left: 2px;
+                }
+
+                .vjs-time-divider {
+                    min-width: 0;
+                    padding: 0;
+                }
+
+                // 进度条
+                .vjs-progress-holder {
+                    height: 2px;
+                }
+
+                .vjs-play-progress {
+                    &:before {
+                        top: 50%;
+                        transform: translate3d(0, -50%, 0);
+                    }
+                }
+
+            }
         }
     }
 </style>

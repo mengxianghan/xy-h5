@@ -4,15 +4,36 @@
  * @Description: index
 -->
 <template>
-    <wrapper>
-        h5 模板
-    </wrapper>
+    <container>
+        <video-player :options="options"></video-player>
+    </container>
 </template>
 
 <script>
     export default {
         data() {
-            return {}
+            return {
+                options: {
+                    autoplay: false,
+                    controls: true,
+                    fluid: true,
+                    bigPlayButton: true,
+                    controlBar: {
+                        remainingTimeDisplay: false,
+                        pictureInPictureToggle: false,
+                        volumePanel: false,
+                        currentTimeDisplay: true,
+                        timeDivider: true,
+                        durationDisplay: true
+                    },
+                    sources: [
+                        {
+                            src: "http://cdn.xuanyunet.com/video.mp4",
+                            type: "video/mp4"
+                        }
+                    ],
+                }
+            }
         },
         computed: {},
         watch: {},

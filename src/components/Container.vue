@@ -1,10 +1,10 @@
 <!--
  * @Author: 孟祥涵
  * @Date: 2020-11-10
- * @Description: Wrapper
+ * @Description: Container
 -->
 <template>
-    <div class="wrapper"
+    <div class="container"
          :style="styles">
         <slot></slot>
     </div>
@@ -12,7 +12,7 @@
 
 <script>
     export default {
-        name: "Wrapper",
+        name: "Container",
         props: {
             background: {
                 type: String,
@@ -39,7 +39,7 @@
 </script>
 
 <style lang="scss" scoped>
-    .wrapper {
+    .container {
         min-height: 100%;
     }
 </style>
