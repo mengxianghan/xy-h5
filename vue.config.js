@@ -27,33 +27,32 @@ const assetsCDN = {
         'vuex': 'Vuex',
         'vue-router': 'VueRouter',
         'axios': 'axios',
+        'vant': 'vant',
         'lodash': '_',
         'jschardet': 'jschardet',
         'dayjs': 'dayjs',
-        'vant': 'Vant',
-        'weixin-js-sdk': 'wx',
         'video.js': 'videojs'
     },
     css: {
         env: [
-            'https://cdn.jsdelivr.net/npm/video.js@7.11.0/dist/video-js.min.css'
+            '//cdn.jsdelivr.net/npm/video.js@7.11.0/dist/video-js.min.css'
         ]
     },
     js: {
         env: [
-            'https://cdn.jsdelivr.net/npm/lib-flexible@0.3.2/flexible.min.js',
-            'https://cdn.jsdelivr.net/npm/video.js@7.11.0/dist/video.min.js'
+            '//cdn.jsdelivr.net/npm/lib-flexible@0.3.2/flexible.min.js',
+            '//cdn.jsdelivr.net/npm/video.js@7.11.0/dist/video.min.js',
+            '//res.wx.qq.com/open/js/jweixin-1.6.0.js'
         ],
         production: [
-            'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js',
-            'https://cdn.jsdelivr.net/npm/vuex@3.1.3/dist/vuex.min.js',
-            'https://cdn.jsdelivr.net/npm/vue-router@3.1.6/dist/vue-router.min.js',
-            'https://cdn.jsdelivr.net/npm/axios@0.19.2/dist/axios.min.js',
-            'https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js',
-            'https://cdn.jsdelivr.net/npm/jschardet@2.1.1/dist/jschardet.min.js',
-            'https://cdn.jsdelivr.net/npm/dayjs@1.9.6/dayjs.min.js',
-            'https://cdn.jsdelivr.net/npm/vant@2.10.14/lib/index.min.js',
-            'https://cdn.jsdelivr.net/npm/weixin-js-sdk@1.6.0/index.min.js'
+            '//cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js',
+            '//cdn.jsdelivr.net/npm/vuex@3.1.3/dist/vuex.min.js',
+            '//cdn.jsdelivr.net/npm/vue-router@3.1.6/dist/vue-router.min.js',
+            '//cdn.jsdelivr.net/npm/axios@0.19.2/dist/axios.min.js',
+            '//cdn.jsdelivr.net/npm/vant@2.11.0/lib/vant.min.js',
+            '//cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js',
+            '//cdn.jsdelivr.net/npm/jschardet@2.1.1/dist/jschardet.min.js',
+            '//cdn.jsdelivr.net/npm/dayjs@1.9.6/dayjs.min.js'
         ]
     }
 }
@@ -85,7 +84,7 @@ module.exports = {
         plugins: [
             new CompressionPlugin({
                 test: /\.(js|css)$/,
-                filename: '[path].gz[query]',
+                filename: '[path][base].gz[query]',
                 threshold: 10240,
                 deleteOriginalAssets: false
             })

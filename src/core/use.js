@@ -1,12 +1,12 @@
 import Vue from 'vue'
-import Vant from 'vant'
+import vant from 'vant'
 import '@/components'
 import api from '@/api'
 import '@/core/permission'
 import 'vant/lib/index.less'
 import '@/assets/style/index.scss'
 
-Vue.use(Vant)
+Vue.use(vant)
 
 //开启调试
 if (process.env.VUE_APP_DEBUGGER === 'true') {

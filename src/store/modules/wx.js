@@ -1,5 +1,4 @@
 import api from '@/api'
-import wx from 'weixin-js-sdk'
 
 const state = {
     wxConfig: {}
