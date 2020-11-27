@@ -55,19 +55,51 @@ export function guid() {
 }
 
 /**
- * 秒转时间
- * @param {Number} value
+ * 解析时间字符串
+ *
+ * @param {Number} second
+ * @return {String} 00:00 or 00:00:00
  */
-export function toTime(value, empty = '00:00') {
-    if (!value) return empty
-    let result = parseInt(value)
-    let h = Math.floor(result / 3600) < 10 ? '0' + Math.floor(result / 3600) : Math.floor(result / 3600)
-    let m = Math.floor((result / 60 % 60)) < 10 ? '0' + Math.floor((result / 60 % 60)) : Math.floor((result / 60 % 60))
-    let s = Math.floor((result % 60)) < 10 ? '0' + Math.floor((result % 60)) : Math.floor((result % 60))
-    if (Number(h) === 0) {
-        result = `${m}:${s}`
-    } else {
-        result = `${h}:${m}:${s}`
+export function secondToTime(second) {
+    second = second || 0
+    if (second === 0 || second === Infinity || second.toString() === 'NaN') {
+        return '00:00'
     }
-    return result
+    const add0 = (num) => (num < 10 ? '0' + num : '' + num)
+    const hour = Math.floor(second / 3600)
+    const min = Math.floor((second - hour * 3600) / 60)
+    const sec = Math.floor(second - hour * 3600 - min * 60)
+    return (hour > 0 ? [hour, min, sec] : [0, min, sec]).map(add0).join(':')
+}
+
+/**
+ * 数据映射
+ * @param list 数据源
+ * @param structure 新结构
+ *          {
+ *              新字段名称: 对应数据中的字段名
+ *          }
+ * @param expand 拓展数据
+ * @returns {[]}
+ */
+export function mapping(list, structure = {}, expand = {}) {
+    let newList = []
+    if (!Array.isArray(list)) return []
+    list.forEach((item) => {
+        let temp = {...expand}
+        for (let key in structure) {
+            if (structure[key] instanceof Function) {
+                temp[key] = structure[key](item)
+            } else {
+                let value = item[structure[key]]
+                if ((value instanceof Array) && value.length) {
+                    temp[key] = mapping(value, structure, expand)
+                } else {
+                    temp[key] = (typeof value !== 'undefined') && value !== '' ? value : ''
+                }
+            }
+        }
+        newList.push(temp)
+    })
+    return newList
 }
