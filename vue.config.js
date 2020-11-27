@@ -28,7 +28,6 @@ const assetsCDN = {
         'vue-router': 'VueRouter',
         'axios': 'axios',
         'vant': 'vant',
-        'lodash': '_',
         'jschardet': 'jschardet',
         'dayjs': 'dayjs',
         'video.js': 'videojs'
@@ -50,7 +49,6 @@ const assetsCDN = {
             '//cdn.jsdelivr.net/npm/vue-router@3.1.6/dist/vue-router.min.js',
             '//cdn.jsdelivr.net/npm/axios@0.19.2/dist/axios.min.js',
             '//cdn.jsdelivr.net/npm/vant@2.11.0/lib/vant.min.js',
-            '//cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js',
             '//cdn.jsdelivr.net/npm/jschardet@2.1.1/dist/jschardet.min.js',
             '//cdn.jsdelivr.net/npm/dayjs@1.9.6/dayjs.min.js'
         ]
