@@ -98,6 +98,17 @@ module.exports = {
                 args[0].cdn.js = getAssetsCDN('js')
                 return args
             })
+
+        config.module
+            .rule("images")
+            .test(/\.(png|jpe?g|gif|webp)(\?.*)?$/)
+            .use("url-loader")
+            .loader("url-loader")
+            .tap(options => ({
+                    ...options,
+                    limit: 1024 /// 文件大小（低于1Kb才会base64编码）
+                })
+            )
     },
     productionSourceMap: !isProd,
     css: {
