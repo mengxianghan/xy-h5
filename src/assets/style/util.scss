@@ -1,0 +1,58 @@
+/**
+ * @Author: 孟祥涵
+ * @Date: 2020-11-10
+ * @Description: util
+ */
+// Align
+@each $value in (left center right) {
+    .align-#{$value} {
+        text-align: $value !important;
+    }
+}
+
+// Color
+@each $class, $value in (primary, $text-color-primary),
+        (green, $text-color-green),
+        (red, $text-color-red) {
+    .text-#{$class} {
+        color: $value !important;
+    }
+}
+
+// FontSize
+@each $value in (12, 14, 16, 24, 18, 20) {
+    .fs-#{$value} {
+        font-size: #{$value}px !important;
+    }
+}
+
+// Spacing
+@each $class, $property in (mt, margin-top),
+        (mb, margin-bottom),
+        (ml, margin-left),
+        (mr, margin-right),
+        (mx, margin-left margin-right),
+        (my, margin-top margin-bottom),
+        (ma, margin),
+        (pt, padding-top),
+        (pb, padding-bottom),
+        (pl, padding-left),
+        (pr, padding-right),
+        (px, padding-left padding-right),
+        (py, padding-top padding-bottom),
+        (pa, padding) {
+    .#{$class}-0 {
+        @each $prop in $property {
+            #{$prop}: 0 !important;
+        }
+    }
+    @each $value in (4, 5, 8) {
+        @each $multi in (1 2 3 4 5) {
+            .#{$class}-#{$value}-#{$multi} {
+                @each $prop in $property {
+                    #{$prop}: $value * $multi + px !important;
+                }
+            }
+        }
+    }
+}
