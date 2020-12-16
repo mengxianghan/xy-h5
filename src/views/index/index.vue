@@ -10,40 +10,40 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                options: {
-                    autoplay: false,
-                    controls: true,
-                    fluid: true,
-                    bigPlayButton: true,
-                    controlBar: {
-                        remainingTimeDisplay: false,
-                        pictureInPictureToggle: false,
-                        volumePanel: false,
-                        currentTimeDisplay: true,
-                        timeDivider: true,
-                        durationDisplay: true
-                    },
-                    sources: [
-                        {
-                            src: "http://cdn.xuanyunet.com/video.mp4",
-                            type: "video/mp4"
-                        }
-                    ],
-                }
+export default {
+    data() {
+        return {
+            options: {
+                autoplay: false,
+                controls: true,
+                fluid: true,
+                bigPlayButton: true,
+                controlBar: {
+                    remainingTimeDisplay: false,
+                    pictureInPictureToggle: false,
+                    volumePanel: false,
+                    currentTimeDisplay: true,
+                    timeDivider: true,
+                    durationDisplay: true
+                },
+                sources: [
+                    {
+                        src: 'http://cdn.xuanyunet.com/video.mp4',
+                        type: 'video/mp4'
+                    }
+                ]
             }
-        },
-        computed: {},
-        watch: {},
-        created() {
+        }
+    },
+    computed: {},
+    watch: {},
+    created() {
 
-        },
-        mounted() {
-        },
-        methods: {}
-    }
+    },
+    mounted() {
+    },
+    methods: {}
+}
 </script>
 
 <style lang="scss" scoped>

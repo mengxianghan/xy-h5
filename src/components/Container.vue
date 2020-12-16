@@ -11,35 +11,35 @@
 </template>
 
 <script>
-    export default {
-        name: "Container",
-        props: {
-            background: {
-                type: String,
-                default: ''
+export default {
+    name: 'Container',
+    props: {
+        background: {
+            type: String,
+            default: ''
+        }
+    },
+    data() {
+        return {}
+    },
+    computed: {
+        styles() {
+            return {
+                background: this.background
             }
-        },
-        data() {
-            return {}
-        },
-        computed: {
-            styles() {
-                return {
-                    background: this.background
-                }
-            }
-        },
-        watch: {},
-        created() {
-        },
-        mounted() {
-        },
-        methods: {}
-    }
+        }
+    },
+    watch: {},
+    created() {
+    },
+    mounted() {
+    },
+    methods: {}
+}
 </script>
 
 <style lang="scss" scoped>
-    .container {
-        min-height: 100%;
-    }
+.container {
+    min-height: 100%;
+}
 </style>

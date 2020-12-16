@@ -1,5 +1,6 @@
 import jschardet from 'jschardet'
 import axios from 'axios'
+import {merge} from 'lodash'
 
 const instance = axios.create()
 
@@ -23,7 +24,7 @@ instance.interceptors.response.use(res => {
 
 class Http {
     constructor(config = {}) {
-        this.config = {
+        this.config = merge({
             timeout: 0,
             transformResponse: [function transformResponse(data) {
                 if (typeof data === 'string') {
@@ -35,9 +36,8 @@ class Http {
                     }
                 }
                 return data
-            }],
-            ...config
-        }
+            }]
+        }, config)
     }
 
     /**

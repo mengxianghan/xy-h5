@@ -15,24 +15,24 @@
 </template>
 
 <script>
-    export default {
-        name: "StickyFooter",
-        data() {
-            return {
-                height: 0
-            }
-        },
-        computed: {},
-        watch: {},
-        created() {
-        },
-        mounted() {
-            this.$nextTick(() => {
-                this.height = `${this.$slots.default[0].elm.clientHeight}px`
-            })
-        },
-        methods: {}
-    }
+export default {
+    name: 'StickyFooter',
+    data() {
+        return {
+            height: 0
+        }
+    },
+    computed: {},
+    watch: {},
+    created() {
+    },
+    mounted() {
+        this.$nextTick(() => {
+            this.height = `${this.$slots.default[0].elm.clientHeight}px`
+        })
+    },
+    methods: {}
+}
 </script>
 
 <style lang="scss" scoped>

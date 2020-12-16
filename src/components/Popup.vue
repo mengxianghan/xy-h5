@@ -14,12 +14,12 @@
                  v-if="showToolbar && toolbarPosition === 'top'">
                 <div class="popup__cancel"
                      @click="handleCancel">
-                    {{cancelButtonText}}
+                    {{ cancelButtonText }}
                 </div>
-                <div class="popup__title">{{title}}</div>
+                <div class="popup__title">{{ title }}</div>
                 <div class="popup__confirm"
                      @click="handleConfirm">
-                    {{confirmButtonText}}
+                    {{ confirmButtonText }}
                 </div>
             </div>
             <div class="popup__body">
@@ -28,11 +28,11 @@
             <div class="popup__toolbar popup__toolbar--bottom"
                  v-if="showToolbar && toolbarPosition === 'bottom'">
                 <van-button round>
-                    {{cancelButtonText}}
+                    {{ cancelButtonText }}
                 </van-button>
                 <van-button type="primary-gradient"
                             round>
-                    {{confirmButtonText}}
+                    {{ confirmButtonText }}
                 </van-button>
             </div>
         </div>
@@ -40,117 +40,117 @@
 </template>
 
 <script>
-    export default {
-        name: "Popup",
-        props: {
-            value: {
-                type: Boolean,
-                default: false
-            },
-            toolbarPosition: {
-                type: String,
-                default: 'top'
-            },
-            showToolbar: {
-                type: Boolean,
-                default: false
-            },
-            title: {
-                type: [String, Number],
-                default: ''
-            },
-            confirmButtonText: {
-                type: String,
-                default: '确认'
-            },
-            cancelButtonText: {
-                type: String,
-                default: '取消'
-            },
+export default {
+    name: 'Popup',
+    props: {
+        value: {
+            type: Boolean,
+            default: false
         },
-        data() {
-            return {}
+        toolbarPosition: {
+            type: String,
+            default: 'top'
         },
-        computed: {},
-        watch: {},
-        created() {
+        showToolbar: {
+            type: Boolean,
+            default: false
         },
-        mounted() {
+        title: {
+            type: [String, Number],
+            default: ''
         },
-        methods: {
-            /**
-             * 确认
-             */
-            handleConfirm() {
-                this.$emit('confirm')
-                this.onCancel()
-            },
-            /**
-             * 取消
-             */
-            handleCancel() {
-                this.$emit('cancel')
-                this.onCancel()
-            },
-            /**
-             * 取消
-             */
-            onCancel() {
-                this.$emit('input', false)
-            }
+        confirmButtonText: {
+            type: String,
+            default: '确认'
+        },
+        cancelButtonText: {
+            type: String,
+            default: '取消'
+        }
+    },
+    data() {
+        return {}
+    },
+    computed: {},
+    watch: {},
+    created() {
+    },
+    mounted() {
+    },
+    methods: {
+        /**
+         * 确认
+         */
+        handleConfirm() {
+            this.$emit('confirm')
+            this.onCancel()
+        },
+        /**
+         * 取消
+         */
+        handleCancel() {
+            this.$emit('cancel')
+            this.onCancel()
+        },
+        /**
+         * 取消
+         */
+        onCancel() {
+            this.$emit('input', false)
         }
     }
+}
 </script>
 
 <style lang="scss" scoped>
-    .popup {
+.popup {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &__toolbar {
         display: flex;
-        flex-direction: column;
-        height: 100%;
+        align-items: center;
+        justify-content: space-between;
+        height: 56px;
+        flex-shrink: 0;
 
-        &__toolbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 56px;
-            flex-shrink: 0;
+        &--bottom {
+            padding: 0 32px;
 
-            &--bottom {
-                padding: 0 32px;
+            ::v-deep {
+                .van-button {
+                    flex: 1;
 
-                ::v-deep {
-                    .van-button {
-                        flex: 1;
-
-                        + .van-button {
-                            margin-left: 24px;
-                        }
+                    + .van-button {
+                        margin-left: 24px;
                     }
                 }
             }
         }
-
-        &__cancel,
-        &__confirm {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 24px;
-            font-size: 14px;
-            color: #707070;
-            font-weight: 500;
-        }
-
-        &__title {
-            font-size: 16px;
-            font-weight: 500;
-            color: #2c2c2c;
-        }
-
-        &__body {
-            flex: 1;
-            overflow-y: auto;
-        }
     }
+
+    &__cancel,
+    &__confirm {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 24px;
+        font-size: 14px;
+        color: #707070;
+        font-weight: 500;
+    }
+
+    &__title {
+        font-size: 16px;
+        font-weight: 500;
+        color: #2c2c2c;
+    }
+
+    &__body {
+        flex: 1;
+        overflow-y: auto;
+    }
+}
 </style>
