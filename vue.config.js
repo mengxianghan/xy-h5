@@ -30,7 +30,8 @@ const assetsCDN = {
         'vant': 'vant',
         'jschardet': 'jschardet',
         'dayjs': 'dayjs',
-        'video.js': 'videojs'
+        'video.js': 'videojs',
+        'sa-sdk-javascript': 'sensorsDataAnalytic201505'
     },
     css: {
         env: [
@@ -50,7 +51,8 @@ const assetsCDN = {
             '//cdn.jsdelivr.net/npm/axios@0.19.2/dist/axios.min.js',
             '//cdn.jsdelivr.net/npm/vant@2.11.0/lib/vant.min.js',
             '//cdn.jsdelivr.net/npm/jschardet@2.1.1/dist/jschardet.min.js',
-            '//cdn.jsdelivr.net/npm/dayjs@1.9.6/dayjs.min.js'
+            '//cdn.jsdelivr.net/npm/dayjs@1.9.6/dayjs.min.js',
+            '//cdn.jsdelivr.net/npm/sa-sdk-javascript@1.15.11/sensorsdata.min.js'
         ]
     }
 }

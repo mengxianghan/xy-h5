@@ -5,6 +5,9 @@ import api from '@/api'
 import '@/core/permission'
 import 'vant/lib/index.less'
 import '@/assets/style/index.scss'
+import {init} from '@/utils/sensors'
+
+init()
 
 Vue.use(vant)
 

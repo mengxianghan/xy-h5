@@ -4,7 +4,7 @@
  * @Description: Container
 -->
 <template>
-    <div class="container"
+    <div class="x-container"
          :style="styles">
         <slot></slot>
     </div>

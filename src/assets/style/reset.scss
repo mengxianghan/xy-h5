@@ -12,7 +12,11 @@ body,
 }
 
 body {
-    font: normal normal normal 14px/1.5 "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", Helvetica, sans-serif;
+    font: normal normal normal 14px/1 $font-family;
+}
+
+i, b {
+    font-style: normal;
 }
 
 img, video, audio, iframe {
@@ -21,4 +25,9 @@ img, video, audio, iframe {
 
 input, textarea {
     -webkit-appearance: none;
+}
+
+input:-internal-autofill-previewed,
+input:-internal-autofill-selected {
+    transition: background-color 5000s ease-in-out 0s !important;
 }

@@ -9,23 +9,23 @@
                round
                safe-area-inset-bottom
                @click-overlay="onCancel">
-        <div class="popup">
-            <div class="popup__toolbar popup__toolbar--top"
+        <div class="x-popup">
+            <div class="x-popup__toolbar x-popup__toolbar--top"
                  v-if="showToolbar && toolbarPosition === 'top'">
-                <div class="popup__cancel"
+                <div class="x-popup__cancel"
                      @click="handleCancel">
                     {{ cancelButtonText }}
                 </div>
-                <div class="popup__title">{{ title }}</div>
-                <div class="popup__confirm"
+                <div class="x-popup__title">{{ title }}</div>
+                <div class="x-popup__confirm"
                      @click="handleConfirm">
                     {{ confirmButtonText }}
                 </div>
             </div>
-            <div class="popup__body">
+            <div class="x-popup__body">
                 <slot></slot>
             </div>
-            <div class="popup__toolbar popup__toolbar--bottom"
+            <div class="x-popup__toolbar x-popup__toolbar--bottom"
                  v-if="showToolbar && toolbarPosition === 'bottom'">
                 <van-button round>
                     {{ cancelButtonText }}
@@ -103,7 +103,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.popup {
+.x-popup {
     display: flex;
     flex-direction: column;
     height: 100%;

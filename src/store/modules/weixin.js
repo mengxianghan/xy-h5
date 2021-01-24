@@ -1,28 +1,34 @@
 import api from '@/api'
 
 const state = {
-    wxConfig: {}
+    config: {}
 }
 
 const mutations = {
-    SET_WX_CONFIG(state, payload) {
-        state.configInfo = payload
+    /**
+     * 设置配置
+     * @param state
+     * @param payload
+     * @constructor
+     */
+    SET_CONFIG(state, payload) {
+        state.config = payload
     }
 }
 
 const actions = {
     /**
-     * 微信配置
+     * 初始化微信配置
      * @param url
      */
-    async setConfig({commit}, url) {
+    async init({commit}, url) {
         // 获取微信签名
-        const {code, data} = await api.wx.getWxConfig({
+        const {code, data} = await api.weixin.getWxConfig({
             url: encodeURIComponent(url)
         })
         if (code === '200') {
             const {timestamp, noncestr, signature} = data
-            commit('SET_WX_CONFIG', data)
+            commit('SET_CONFIG', data)
             wx.config({
                 debug: process.env.VUE_APP_WX_DEBUG === 'true' ? true : false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
                 appId: process.env.VUE_APP_WX_APP_ID, // 必填，公众号的唯一标识

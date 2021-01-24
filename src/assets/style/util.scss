@@ -1,7 +1,8 @@
 /**
- * @Author: 孟祥涵
- * @Date: 2020-11-10
- * @Description: util
+ * @author: 孟祥涵
+ * @email: 1056811341@qq.com
+ * @date: 2020-11-10
+ * @description: util
  */
 // Align
 @each $value in (left center right) {
@@ -11,18 +12,28 @@
 }
 
 // Color
-@each $class, $value in (primary, $text-color-primary),
-        (green, $text-color-green),
-        (red, $text-color-red) {
+@each $class, $value in (primary, $color-primary),
+        (green, $color-green),
+        (red, $color-red),
+        (heading, $text-heading-color),
+        (secondary, $text-secondary-color),
+        (placeholder, $text-placeholder-color) {
     .text-#{$class} {
         color: $value !important;
     }
 }
 
-// FontSize
+// Font Size
 @each $value in (12, 14, 16, 24, 18, 20) {
     .fs-#{$value} {
         font-size: #{$value}px !important;
+    }
+}
+
+// Font Weight
+@each $value in (400, 500, 600) {
+    .fw-#{$value} {
+        font-weight: #{$value} !important;
     }
 }
 
@@ -46,11 +57,12 @@
             #{$prop}: 0 !important;
         }
     }
-    @each $value in (4, 5, 8) {
-        @each $multi in (1 2 3 4 5) {
-            .#{$class}-#{$value}-#{$multi} {
+
+    @each $multi in (2 3 5) {
+        @each $value in (1 2 3 4 5 6 7 8) {
+            .#{$class}-#{$multi}-#{$value} {
                 @each $prop in $property {
-                    #{$prop}: $value * $multi + px !important;
+                    #{$prop}: $multi * $value + px !important;
                 }
             }
         }

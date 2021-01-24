@@ -4,10 +4,10 @@
  * @Description: StickyFooter
 -->
 <template>
-    <div class="sticky-footer"
-         ref="stickyFooter">
+    <div class="x-sticky-footer"
+         ref="x-stickyFooter">
         <slot></slot>
-        <div class="sticky-footer__placeholder"
+        <div class="x-sticky-footer__placeholder"
              :style="{
                 height:height
              }"></div>

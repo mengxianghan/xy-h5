@@ -8,6 +8,7 @@
 $color-primary: #ff6839;
 $color-red: #fe4a3b;
 $color-green: #0c8;
+$color-black: #000;
 
 // Border
 $border-radius-base: 8px;
@@ -32,6 +33,7 @@ $font-size-heading-3: 18px;
 $font-size-heading-4: 16px;
 $font-size-base: 14px;
 $font-size-sm: 12px;
+$font-family: "PingFang SC", "Lantinghei SC", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", Helvetica, sans-serif;
 
 // Spacing
 $spacing-base: 8px;
@@ -40,10 +42,6 @@ $spacing-md: $spacing-base * 2;
 $spacing-lg: $spacing-base * 3;
 
 // Text
-$text-color-primary: $color-primary;
-$text-color-green: $color-green;
-$text-color-red: $color-red;
-$text-color-black: #000;
-$text-color-title: #2c2c2c;
-$text-color-secondary: #707070;
-$text-color-placeholder: #d0d1d3;
+$text-heading-color: #2c2c2c;
+$text-secondary-color: #707070;
+$text-placeholder-color: #d0d1d3;

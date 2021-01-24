@@ -4,9 +4,9 @@
  * @Description: VideoPlayer
 -->
 <template>
-    <div class="video-player">
+    <div class="x-video-player">
         <video ref="VideoPlayer"
-               class="video-js xy-player"></video>
+               class="video-js x-player"></video>
     </div>
 </template>
 
@@ -66,12 +66,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.video-player {
+.x-video-player {
     width: 100%;
 }
 
 ::v-deep {
-    .xy-player {
+    .x-player {
         &.video-js {
 
             // 大播放按钮

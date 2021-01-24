@@ -8,7 +8,7 @@ router.beforeEach((to, from, next) => {
 
     // 微信
     if (isWeixin()) {
-        store.dispatch('wx/setConfig', url)
+        store.dispatch('weixin/init', url)
     }
 
     // 判断预加载数据是否已加载完成
