@@ -50,7 +50,11 @@ class Http {
             instance
                 .request({
                     ...this.config,
-                    ...config
+                    ...config,
+                    headers: {
+                        ...this.config?.headers ?? {},
+                        ...config?.headers ?? {}
+                    }
                 })
                 .then(res => {
                     resolve(res.data)
