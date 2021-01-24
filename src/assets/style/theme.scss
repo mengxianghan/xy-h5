@@ -55,7 +55,7 @@
     &--round-button {
         .van-dialog {
             &__message {
-                color: $text-color-secondary;
+                color: $text-secondary-color;
             }
 
             &__footer {
@@ -81,7 +81,7 @@
             &--warning {
                 background: transparent;
                 border: $button-primary-bg-color solid 1px;
-                color: $text-color-primary;
+                color: $color-primary;
             }
         }
     }
