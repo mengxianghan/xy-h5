@@ -4,7 +4,7 @@
  * @Description: Echart
 -->
 <template>
-    <div class="echart"
+    <div class="x-echart"
          ref="echart"></div>
 </template>
 
@@ -63,7 +63,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.echart {
-    height: 400px;
+.x-echart {
+    height: 375px;
 }
 </style>

@@ -1,8 +1,10 @@
 /**
- * @Author: 孟祥涵
- * @Date: 2020-10-13
- * @Description: 工具类
+ * @author: 孟祥涵
+ * @email: 1056811341@qq.com
+ * @date: 2021-01-24
+ * @description: 工具类
  */
+
 
 export function toTree(list, options = {}) {
     const opts = {

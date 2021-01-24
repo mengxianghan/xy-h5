@@ -1,7 +1,8 @@
 <!--
- * @Author: 孟祥涵
- * @Date: 2020-11-01
- * @Description: Popup
+ * @author: 孟祥涵
+ * @email: 1056811341@qq.com
+ * @date: 2020-11-01
+ * @description: Popup.vue
 -->
 <template>
     <van-popup :value="value"

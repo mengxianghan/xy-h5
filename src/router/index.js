@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import {constantRouterMap, notFoundRouter} from '@/config/router'
 
 Vue.use(VueRouter)
 
@@ -14,7 +15,18 @@ files.keys().forEach(key => {
 const router = new VueRouter({
     mode: 'history',
     base: process.env.BASE_URL,
-    routes
+    scrollBehavior: (to, from, savedPosition) => {
+        if (savedPosition) {
+            return savedPosition
+        } else {
+            return {x: 0, y: 0}
+        }
+    },
+    routes: [
+        ...routes,
+        ...constantRouterMap,
+        notFoundRouter
+    ]
 })
 
 export default router

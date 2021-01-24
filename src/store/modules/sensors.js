@@ -1,8 +1,10 @@
 /**
- * @Author: 孟祥涵
- * @Date: 2020-12-08
- * @Description: sensors.js
+ * @author: 孟祥涵
+ * @email: 1056811341@qq.com
+ * @date: 2021-01-24
+ * @description: 神策
  */
+
 
 import {track} from '@/utils/sensors'
 

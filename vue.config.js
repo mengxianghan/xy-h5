@@ -42,7 +42,8 @@ const assetsCDN = {
         env: [
             '//cdn.jsdelivr.net/npm/lib-flexible@0.3.2/flexible.min.js',
             '//cdn.jsdelivr.net/npm/video.js@7.11.0/dist/video.min.js',
-            '//res.wx.qq.com/open/js/jweixin-1.6.0.js'
+            '//res.wx.qq.com/open/js/jweixin-1.6.0.js',
+            '//cdn.jsdelivr.net/npm/echarts@5.0.0/dist/echarts.min.js'
         ],
         production: [
             '//cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js',

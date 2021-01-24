@@ -1,4 +1,12 @@
 /**
+ * @author: 孟祥涵
+ * @email: 1056811341@qq.com
+ * @date: 2021-01-24
+ * @description: 验证类
+ */
+
+
+/**
  * 验证手机号
  * @param mobile
  * @returns {boolean}

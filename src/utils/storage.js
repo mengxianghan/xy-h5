@@ -1,3 +1,10 @@
+/**
+ * @author: 孟祥涵
+ * @email: 1056811341@qq.com
+ * @date: 2021-01-24
+ * @description: 本地缓存
+ */
+
 import {upperFirst} from 'lodash'
 
 /**

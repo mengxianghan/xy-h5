@@ -5,20 +5,20 @@
 -->
 <template>
     <van-empty :image="image"
-               class="empty">
+               class="x-empty">
         <div v-if="title || $slots.title"
-             class="empty__title">
+             class="x-empty__title">
             <slot v-if="$slots.title"
                   name="title"></slot>
-            <template v-else>{{title}}</template>
+            <template v-else>{{ title }}</template>
         </div>
         <div v-if="description || $slots.description"
-             class="empty__description">
+             class="x-empty__description">
             <slot v-if="$slots.description"
                   name="description"></slot>
-            <template v-else>{{description}}</template>
+            <template v-else>{{ description }}</template>
         </div>
-        <div class="empty__bottom"
+        <div class="x-empty__bottom"
              v-if="$slots.default">
             <slot></slot>
         </div>
@@ -26,63 +26,63 @@
 </template>
 
 <script>
-    export default {
-        name: "Empty",
-        props: {
-            image: {
-                type: String,
-                default: ''
-            },
-            title: {
-                type: String,
-                default: ''
-            },
-            description: {
-                type: String,
-                default: ''
-            }
+export default {
+    name: 'Empty',
+    props: {
+        image: {
+            type: String,
+            default: ''
         },
-        data() {
-            return {}
+        title: {
+            type: String,
+            default: ''
         },
-        computed: {},
-        watch: {},
-        created() {
-        },
-        mounted() {
-        },
-        methods: {}
-    }
+        description: {
+            type: String,
+            default: ''
+        }
+    },
+    data() {
+        return {}
+    },
+    computed: {},
+    watch: {},
+    created() {
+    },
+    mounted() {
+    },
+    methods: {}
+}
 </script>
 
 <style lang="scss" scoped>
-    .empty {
-        text-align: center;
-        padding: 85px 0;
+.x-empty {
+    text-align: center;
+    padding: 85px 0;
 
-        ::v-deep {
-            .van-empty {
-                &__image {
-                    width: 170px;
-                    height: auto;
-                }
+    ::v-deep {
+        .van-empty {
+            &__image {
+                width: 170px;
+                height: auto;
             }
         }
-
-        &__title {
-            font-size: 20px;
-            color: #000;
-            font-weight: 500;
-            margin-bottom: 14px;
-        }
-
-        &__description {
-            font-size: 14px;
-            color: #b2b2b2;
-        }
-
-        &__bottom {
-            margin-top: 48px;
-        }
     }
+
+    &__title {
+        font-size: 20px;
+        color: #000;
+        font-weight: 500;
+        margin-bottom: 14px;
+    }
+
+    &__description {
+        font-size: 14px;
+        color: #b2b2b2;
+    }
+
+    &__bottom {
+        margin-top: 48px;
+    }
+}
 </style>
