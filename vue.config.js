@@ -31,29 +31,33 @@ const assetsCDN = {
         'jschardet': 'jschardet',
         'dayjs': 'dayjs',
         'video.js': 'videojs',
-        'sa-sdk-javascript': 'sensorsDataAnalytic201505'
+        'sa-sdk-javascript': 'sensorsDataAnalytic201505',
+        'lodash': '_',
+        'qs': 'Qs'
     },
     css: {
         env: [
-            '//cdn.jsdelivr.net/npm/video.js@7.11.0/dist/video-js.min.css'
+            'https://cdn.jsdelivr.net/npm/video.js@7.11.0/dist/video-js.min.css'
         ]
     },
     js: {
         env: [
-            '//cdn.jsdelivr.net/npm/lib-flexible@0.3.2/flexible.min.js',
-            '//cdn.jsdelivr.net/npm/video.js@7.11.0/dist/video.min.js',
-            '//res.wx.qq.com/open/js/jweixin-1.6.0.js',
-            '//cdn.jsdelivr.net/npm/echarts@5.0.0/dist/echarts.min.js'
+            'https://cdn.jsdelivr.net/npm/lib-flexible@0.3.2/flexible.min.js',
+            'https://cdn.jsdelivr.net/npm/video.js@7.11.0/dist/video.min.js',
+            'https://res.wx.qq.com/open/js/jweixin-1.6.0.js',
+            'https://cdn.jsdelivr.net/npm/echarts@5.0.0/dist/echarts.min.js'
         ],
         production: [
-            '//cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js',
-            '//cdn.jsdelivr.net/npm/vuex@3.1.3/dist/vuex.min.js',
-            '//cdn.jsdelivr.net/npm/vue-router@3.1.6/dist/vue-router.min.js',
-            '//cdn.jsdelivr.net/npm/axios@0.19.2/dist/axios.min.js',
-            '//cdn.jsdelivr.net/npm/vant@2.11.0/lib/vant.min.js',
-            '//cdn.jsdelivr.net/npm/jschardet@2.1.1/dist/jschardet.min.js',
-            '//cdn.jsdelivr.net/npm/dayjs@1.9.6/dayjs.min.js',
-            '//cdn.jsdelivr.net/npm/sa-sdk-javascript@1.15.11/sensorsdata.min.js'
+            'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js',
+            'https://cdn.jsdelivr.net/npm/vuex@3.1.3/dist/vuex.min.js',
+            'https://cdn.jsdelivr.net/npm/vue-router@3.1.6/dist/vue-router.min.js',
+            'https://cdn.jsdelivr.net/npm/axios@0.19.2/dist/axios.min.js',
+            'https://cdn.jsdelivr.net/npm/vant@2.11.0/lib/vant.min.js',
+            'https://cdn.jsdelivr.net/npm/jschardet@2.1.1/dist/jschardet.min.js',
+            'https://cdn.jsdelivr.net/npm/dayjs@1.9.6/dayjs.min.js',
+            'https://cdn.jsdelivr.net/npm/sa-sdk-javascript@1.15.11/sensorsdata.min.js',
+            'https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js',
+            'https://cdn.jsdelivr.net/npm/qs@6.9.6/dist/qs.js'
         ]
     }
 }
@@ -103,10 +107,10 @@ module.exports = {
             })
 
         config.module
-            .rule("images")
+            .rule('images')
             .test(/\.(png|jpe?g|gif|webp)(\?.*)?$/)
-            .use("url-loader")
-            .loader("url-loader")
+            .use('url-loader')
+            .loader('url-loader')
             .tap(options => ({
                     ...options,
                     limit: 1024 /// 文件大小（低于1Kb才会base64编码）
