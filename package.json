@@ -12,7 +12,7 @@
     "build:report": "vue-cli-service build --mode prod --report"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "callapp-lib2": "^2.1.9",
     "compare-versions": "^3.6.0",
     "core-js": "^3.6.4",
