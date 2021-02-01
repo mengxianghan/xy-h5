@@ -5,7 +5,6 @@
  * @description: 工具类
  */
 
-
 export function toTree(list, options = {}) {
     const opts = {
         key: 'id',
@@ -29,18 +28,6 @@ export function toTree(list, options = {}) {
         }
         return true
     })
-}
-
-/**
- * n位Number类型的随机数
- *
- * @param {Number} n 长度
- *
- * @returns {Number}
- */
-export function random(n = 6) {
-    if (n > 21) return null
-    return parseInt((Math.random() + 1) * Math.pow(10, n - 1))
 }
 
 /**
@@ -87,11 +74,11 @@ export function secondToTime(second) {
 export function mapping(list, structure = {}, expand = {}) {
     let newList = []
     if (!Array.isArray(list)) return []
-    list.forEach((item) => {
+    list.forEach((item, index) => {
         let temp = {...expand}
         for (let key in structure) {
             if (structure[key] instanceof Function) {
-                temp[key] = structure[key](item)
+                temp[key] = structure[key](item, index)
             } else {
                 let value = item[structure[key]]
                 if ((value instanceof Array) && value.length) {
