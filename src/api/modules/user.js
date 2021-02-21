@@ -2,12 +2,12 @@
  * @author: 孟祥涵
  * @email: 1056811341@qq.com
  * @date: 2021-02-21
- * @description: weixin.js
+ * @description: user
  */
 
 import request from '@/utils/request'
 
 export default {
-    // 获取微信配置
-    getWxConfig: params => request.api.get('/wx/getConfig', params)
+    // 登录
+    login: params => request.api.post('/', params)
 }

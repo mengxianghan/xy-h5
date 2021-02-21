@@ -15,8 +15,7 @@ import {upperFirst} from 'lodash'
 const storageMap = [
     {key: 'isLogin', type: 'local'},
     {key: 'userInfo', type: 'local', dataType: 'object'},
-    {key: 'token', type: 'local'},
-    {key: 'extraInfo', type: 'local', dataType: 'object'}
+    {key: 'token', type: 'local'}
 ]
 
 const storage = {}
@@ -75,6 +74,23 @@ storageMap.forEach(item => {
                 break
             case 'cookie':
                 res = Cookies.remove(item.key, item.config || {})
+                break
+        }
+        return res
+    }
+
+    // clear
+    storage[`clear`] = () => {
+        let res
+        switch (item.type) {
+            case 'session':
+                res = sessionStorage.clear()
+                break
+            case 'local':
+                res = localStorage.clear()
+                break
+            case 'cookie':
+                res = Cookies.clear()
                 break
         }
         return res

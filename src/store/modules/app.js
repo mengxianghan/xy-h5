@@ -6,9 +6,11 @@
  */
 
 import axios from 'axios'
+import {Toast} from 'vant'
 
 const state = {
-    complete: false
+    complete: false,
+    loading: null
 }
 
 const mutations = {
@@ -21,6 +23,15 @@ const mutations = {
      */
     SET_COMPLETE(state, complete = false) {
         state.complete = complete
+    },
+    /**
+     * 设置 loading
+     * @param state
+     * @param loading
+     * @constructor
+     */
+    SET_LOADING(state, loading) {
+        state.loading = loading
     }
 }
 
@@ -37,6 +48,27 @@ const actions = {
                 resolve()
             })
         })
+    },
+    /**
+     * 显示 loading
+     */
+    showLoading({commit}, options = {}) {
+        const loading = Toast.loading({
+            message: '加载中',
+            forbidClick: true,
+            ...options
+        })
+        commit('SET_LOADING', loading)
+    },
+    /**
+     * 隐藏 loading
+     */
+    hideLoading({commit, state}) {
+        const {loading} = state
+        if (loading) {
+            Toast.clear(loading)
+            commit('SET_LOADING', null)
+        }
     }
 }
 

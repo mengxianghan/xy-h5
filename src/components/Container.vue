@@ -40,7 +40,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
+.x-container {
     min-height: 100%;
 }
 </style>

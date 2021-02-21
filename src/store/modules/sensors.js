@@ -5,7 +5,6 @@
  * @description: 神策
  */
 
-
 import {track} from '@/utils/sensors'
 
 const state = {}

@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import vant from 'vant'
-import '@/components'
+import store from '@/store'
 import api from '@/api'
+import '@/components'
 import '@/core/permission'
 import 'vant/lib/index.less'
 import '@/assets/style/index.scss'
@@ -22,4 +23,10 @@ if (process.env.VUE_APP_MOCK === 'true') {
     require('@/mock')
 }
 
-window.$api = Vue.prototype.$api = api
+window.$xy = Vue.prototype.$xy = {
+    api,
+    loading: {
+        show: options => store.dispatch('app/showLoading', options = {}),
+        hide: () => store.dispatch('app/hideLoading')
+    }
+}

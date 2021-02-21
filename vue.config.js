@@ -55,7 +55,7 @@ const assetsCDN = {
             'https://cdn.jsdelivr.net/npm/vant@2.11.0/lib/vant.min.js',
             'https://cdn.jsdelivr.net/npm/jschardet@2.1.1/dist/jschardet.min.js',
             'https://cdn.jsdelivr.net/npm/dayjs@1.9.6/dayjs.min.js',
-            'https://cdn.jsdelivr.net/npm/sa-sdk-javascript@1.15.11/sensorsdata.min.js',
+            'https://cdn.jsdelivr.net/npm/sa-sdk-javascript@1.16.2/sensorsdata.min.js',
             'https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js',
             'https://cdn.jsdelivr.net/npm/qs@6.9.6/dist/qs.js'
         ]
