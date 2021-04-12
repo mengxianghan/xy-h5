@@ -6,7 +6,7 @@
 -->
 <template>
     <container>
-        <van-cell-group>
+        <van-cell-group :border="false">
             <van-cell :to="{name:'echart'}"
                       title="图表 Echart"
                       is-link></van-cell>
