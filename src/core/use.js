@@ -6,9 +6,8 @@ import '@/components'
 import '@/core/permission'
 import 'vant/lib/index.less'
 import '@/assets/style/index.scss'
-import {init} from '@/utils/sensors'
 
-init()
+store.dispatch('sensors/init')
 
 Vue.use(vant)
 
