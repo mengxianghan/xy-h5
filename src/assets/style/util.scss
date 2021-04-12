@@ -15,9 +15,9 @@
 @each $class, $value in (primary, $color-primary),
         (green, $color-green),
         (red, $color-red),
-        (heading, $text-heading-color),
-        (secondary, $text-secondary-color),
-        (placeholder, $text-placeholder-color) {
+        (heading, $text-color-heading),
+        (secondary, $text-color-secondary),
+        (placeholder, $text-color-placeholder) {
     .text-#{$class} {
         color: $value !important;
     }
