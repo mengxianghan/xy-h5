@@ -12,7 +12,7 @@ router.beforeEach((to, from, next) => {
     }
 
     // 判断预加载数据是否已加载完成
-    if (store.getters.complete) {
+    if (store.getters['app/complete']) {
         // 加载完成
         next()
     } else {

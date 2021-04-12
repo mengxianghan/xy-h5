@@ -3,47 +3,44 @@ const isProd = process.env.NODE_ENV === 'production'
 
 /**
  * 获取对应的 CDN 资源
- * @param key
+ * @param {string} key
+ * @param {any} defaults 默认值
  * @returns {[]}
  */
-const getAssetsCDN = (key) => {
-    let res = []
+const getAssetsCDN = (key, defaults = []) => {
     const data = assetsCDN[key]
-    if (data.env) {
-        res = data.env
-    }
+    let res = data.env || defaults
     if (data[process.env.NODE_ENV]) {
-        res = [
-            ...res,
-            ...data[process.env.NODE_ENV]
-        ]
+        res = res instanceof Array ? [...res, ...data[process.env.NODE_ENV]] : {...res, ...data[process.env.NODE_ENV]}
     }
     return res
 }
 
 const assetsCDN = {
     externals: {
-        'vue': 'Vue',
-        'vuex': 'Vuex',
-        'vue-router': 'VueRouter',
-        'axios': 'axios',
-        'vant': 'vant',
-        'jschardet': 'jschardet',
-        'dayjs': 'dayjs',
-        'video.js': 'videojs',
-        'sa-sdk-javascript': 'sensorsDataAnalytic201505',
-        'lodash': '_',
-        'qs': 'Qs'
+        production: {
+            'vue': 'Vue',
+            'vuex': 'Vuex',
+            'vue-router': 'VueRouter',
+            'axios': 'axios',
+            'vant': 'vant',
+            'jschardet': 'jschardet',
+            'dayjs': 'dayjs',
+            'video.js': 'videojs',
+            'sa-sdk-javascript': 'sensorsDataAnalytic201505',
+            'lodash': '_',
+            'qs': 'Qs'
+        }
     },
     css: {
         env: [
-            'https://cdn.jsdelivr.net/npm/video.js@7.11.0/dist/video-js.min.css'
+            'https://cdn.jsdelivr.net/npm/video.js@7.12.0/dist/video-js.min.css'
         ]
     },
     js: {
         env: [
             'https://cdn.jsdelivr.net/npm/lib-flexible@0.3.2/flexible.min.js',
-            'https://cdn.jsdelivr.net/npm/video.js@7.11.0/dist/video.min.js',
+            'https://cdn.jsdelivr.net/npm/video.js@7.12.0/dist/video.min.js',
             'https://res.wx.qq.com/open/js/jweixin-1.6.0.js',
             'https://cdn.jsdelivr.net/npm/echarts@5.0.0/dist/echarts.min.js'
         ],
@@ -51,13 +48,13 @@ const assetsCDN = {
             'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js',
             'https://cdn.jsdelivr.net/npm/vuex@3.1.3/dist/vuex.min.js',
             'https://cdn.jsdelivr.net/npm/vue-router@3.1.6/dist/vue-router.min.js',
-            'https://cdn.jsdelivr.net/npm/axios@0.19.2/dist/axios.min.js',
-            'https://cdn.jsdelivr.net/npm/vant@2.11.0/lib/vant.min.js',
+            'https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js',
+            'https://cdn.jsdelivr.net/npm/vant@2.12.13/lib/vant.min.js',
             'https://cdn.jsdelivr.net/npm/jschardet@2.1.1/dist/jschardet.min.js',
             'https://cdn.jsdelivr.net/npm/dayjs@1.9.6/dayjs.min.js',
-            'https://cdn.jsdelivr.net/npm/sa-sdk-javascript@1.16.2/sensorsdata.min.js',
-            'https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js',
-            'https://cdn.jsdelivr.net/npm/qs@6.9.6/dist/qs.js'
+            'https://cdn.jsdelivr.net/npm/sa-sdk-javascript@1.16.9/sensorsdata.min.js',
+            'https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js',
+            'https://cdn.jsdelivr.net/npm/qs@6.10.1/dist/qs.js'
         ]
     }
 }
@@ -85,7 +82,7 @@ module.exports = {
         }
     },
     configureWebpack: {
-        externals: isProd ? assetsCDN.externals : {},
+        externals: getAssetsCDN('externals', {}),
         plugins: [
             new CompressionPlugin({
                 test: /\.(js|css)$/,
@@ -122,7 +119,30 @@ module.exports = {
         loaderOptions: {
             less: {
                 modifyVars: {
-                    'hack': `true; @import '~@/assets/style/theme.less'`
+                    // Color Palette
+                    'primary': ' #ff6839',
+                    'green': '#0c8',
+                    'red': '#fe4a3b',
+
+                    // Button
+                    'button-primary-background-color': '@primary',
+                    'button-primary-border-color': '@primary',
+                    'button-large-height': '48px',
+                    'button-disabled-opacity': 1,
+                    'button-default-color': '#707070',
+                    'button-default-border-color': '#979797',
+
+                    // Dialog
+                    'dialog-confirm-button-text-color': '@primary',
+
+                    // GoodsAction
+                    'goods-action-height': '56px',
+                    'goods-action-button-height': '38px',
+                    'goods-action-button-danger-color': 'linear-gradient(304deg, #ff931e 0%, #ff6839 100%)',
+
+                    // SubmitBar
+                    'submit-bar-height': '56px',
+                    'submit-bar-button-height': '38px'
                 },
                 javascriptEnabled: true
             },

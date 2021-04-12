@@ -11,6 +11,8 @@ const state = {
     config: {}
 }
 
+const getters = {}
+
 const mutations = {
     /**
      * 设置配置
@@ -88,6 +90,7 @@ const actions = {
 export default {
     namespaced: true,
     state,
+    getters,
     mutations,
     actions
 }

@@ -2,12 +2,12 @@
  * @author: 孟祥涵
  * @email: 1056811341@qq.com
  * @date: 2020-11-01
- * @description: VideoPlayer.vue
+ * @description: 视频播放器
 -->
 <template>
     <div class="x-video-player">
         <video ref="VideoPlayer"
-               class="video-js x-player"></video>
+               class="video-js"></video>
     </div>
 </template>
 
@@ -46,8 +46,8 @@ export default {
         init() {
             const player = videojs(this.$refs.VideoPlayer,
                 this.options,
-                function onPlayerReady() {
-                    // console.log('onPlayerReady')
+                () => {
+                    this.$emit('ready', player)
                 }
             )
 
@@ -60,6 +60,7 @@ export default {
             const {player} = this
             if (player) {
                 player.dispose()
+                this.$emit('dispose')
             }
         }
     }
@@ -69,98 +70,5 @@ export default {
 <style lang="scss" scoped>
 .x-video-player {
     width: 100%;
-}
-
-::v-deep {
-    .x-player {
-        &.video-js {
-
-            // 大播放按钮
-            .vjs-big-play-button {
-                background-color: rgba(0, 0, 0, .65);
-                width: 40px;
-                height: 40px;
-                padding: 0;
-                border: 0;
-                border-radius: 10em;
-                top: 50%;
-                left: 50%;
-                transform: translate3d(-50%, -50%, 0);
-                font-size: 24px;
-
-                .vjs-icon-placeholder {
-                    line-height: 1;
-
-                    &:before {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                }
-            }
-
-            // 音量
-            .vjs-volume-bar {
-                &.vjs-slider-horizontal {
-                    height: 2px;
-
-                    .vjs-volume-level {
-                        height: 2px;
-
-                        &:before {
-                            top: 50%;
-                            transform: translate3d(0, -50%, 0);
-                        }
-                    }
-                }
-
-                &.vjs-slider-vertical {
-                    width: 2px;
-
-                    .vjs-volume-level {
-                        width: 2px;
-
-                        &:before {
-                            left: 50%;
-                            transform: translate3d(-50%, 0, 0);
-                        }
-                    }
-                }
-            }
-
-            // 时间
-            .vjs-current-time,
-            .vjs-time-divider,
-            .vjs-duration {
-                display: initial;
-            }
-
-            .vjs-current-time {
-                padding-right: 2px;
-            }
-
-            .vjs-duration {
-                padding-left: 2px;
-            }
-
-            .vjs-time-divider {
-                min-width: 0;
-                padding: 0;
-            }
-
-            // 进度条
-            .vjs-progress-holder {
-                height: 2px;
-            }
-
-            .vjs-play-progress {
-                &:before {
-                    top: 50%;
-                    transform: translate3d(0, -50%, 0);
-                }
-            }
-
-        }
-    }
 }
 </style>

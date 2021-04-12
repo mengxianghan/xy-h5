@@ -26,7 +26,7 @@ if (process.env.VUE_APP_MOCK === 'true') {
 window.$xy = Vue.prototype.$xy = {
     api,
     loading: {
-        show: options => store.dispatch('app/showLoading', options = {}),
+        show: options => store.dispatch('app/showLoading', options),
         hide: () => store.dispatch('app/hideLoading')
     }
 }

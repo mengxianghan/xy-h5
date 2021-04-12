@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import getters from './getters'
-
 Vue.use(Vuex)
 
 const modules = {}
@@ -21,6 +19,8 @@ registerApi(require.context('./modules/', false, /[A-Za-z]+\.(js)$/))
 
 
 export default new Vuex.Store({
-    getters,
+    state: {},
+    getters: {},
+    actions: {},
     modules
 })

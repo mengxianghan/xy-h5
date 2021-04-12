@@ -9,8 +9,6 @@
 </template>
 
 <script>
-import {color} from '@/components/Echart/theme'
-
 export default {
     name: 'Echart',
     props: {
@@ -45,13 +43,19 @@ export default {
         init() {
             const {option} = this
             if (!option || !Object.keys(option).length) return
-            echarts.registerTheme('53', {
-                color,
+            echarts.registerTheme('myechart', {
+                color: [
+                    '#ff6838', '#ff8660', '#ffa488', '#ffc3af', '#ffe1d7',
+                    '#ff9600', '#ffab33', '#ffc066', '#ffd599', '#ffeacc',
+                    '#b2e050', '#c1e673', '#d1ec96', '#e0f3b9', '#f0f9dc',
+                    '#1dd793', '#3ddfa9', '#6be7bf', '#9befd3', '#cdf7e9',
+                    '#27d2fd', '#4adbfd', '#74e4fe', '#a2edfe', '#d0f6fe'
+                ],
                 label: {
                     fontFamily: 'PingFang SC'
                 }
             })
-            let chart = echarts.init(this.$refs.echart, '53')
+            let chart = echarts.init(this.$refs.echart, 'myechart')
             chart.setOption(option)
 
             this.$emit('complete', chart)

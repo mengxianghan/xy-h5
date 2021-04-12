@@ -13,6 +13,10 @@ const state = {
     loading: null
 }
 
+const getters = {
+    complete: state => state.complete
+}
+
 const mutations = {
     /**
      * 设置状态
@@ -53,9 +57,11 @@ const actions = {
      * 显示 loading
      */
     showLoading({commit}, options = {}) {
+        options = typeof options === 'string' ? {message: options} : options
         const loading = Toast.loading({
             message: '加载中',
             forbidClick: true,
+            duration: 0,
             ...options
         })
         commit('SET_LOADING', loading)
@@ -75,6 +81,7 @@ const actions = {
 export default {
     namespaced: true,
     state,
+    getters,
     mutations,
     actions
 }
