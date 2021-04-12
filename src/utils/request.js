@@ -141,7 +141,7 @@ class Http {
 class Api extends Http {
     constructor(gateway = '') {
         super({
-            baseURL: `${process.env.VUE_APP_BASE_URL}${gateway}`
+            baseURL: `${process.env.VUE_APP_API}${gateway}`
         })
     }
 }
