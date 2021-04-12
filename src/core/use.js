@@ -30,3 +30,8 @@ window.$xy = Vue.prototype.$xy = {
         hide: () => store.dispatch('app/hideLoading')
     }
 }
+
+Vue.config.errorHandler = (err, vm, info) => {
+    console.error(err)
+}
+
