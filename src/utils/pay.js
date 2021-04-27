@@ -49,7 +49,17 @@ function onWeixinJSBridgeReady(options) {
 }
 
 /**
- * 微信支付
+ * 微信支付 - 微信内浏览器
+ * @param {object} options
+ *  @var {string} appId 公众号ID，由商户传入
+ *  @var {string} timeStamp 时间戳，自1970年以来的秒数
+ *  @var {string} nonceStr 随机串
+ *  @var {string} package 统一下单接口返回的 prepay_id 参数值，提交格式如：prepay_id=***
+ *  @var {string} signType 微信签名方式
+ *  @var {string} paySign 签名
+ *  @function {function} success 成功回调
+ *  @function {function} fail 失败回调
+ *  @function {function} complete 回调
  */
 export function weixinPay(options) {
     if (typeof WeixinJSBridge == 'undefined') {
@@ -62,4 +72,18 @@ export function weixinPay(options) {
     } else {
         onWeixinJSBridgeReady(options)
     }
+}
+
+/**
+ * h5微信支付 - 微信外浏览器
+ * @param {string} prepayId
+ * @param {string} pkg
+ * @param {string} redirectUrl 回调地址，需进行 encodeURIComponent 处理
+ */
+export function weixinPayOfH5(prepayId, pkg = '', redirectUrl) {
+    if (!prepayId || !pkg || !redirectUrl) {
+        console.error('参数不完整')
+        return
+    }
+    location.href = `https://wx.tenpay.com/cgi-bin/mmpayweb-bin/checkmweb?prepay_id=${prepayId}&package=${pkg}&redirect_url=${rediredtUrl}`
 }
