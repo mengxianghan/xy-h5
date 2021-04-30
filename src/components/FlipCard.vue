@@ -5,12 +5,12 @@
  * @description: 卡片翻转
 -->
 <template>
-    <div class="x-flipcard"
+    <div class="x-flip-card"
          :style="styles">
-        <div class="x-flipcard__front">
+        <div class="x-flip-card__front">
             <slot name="front"></slot>
         </div>
-        <div class="x-flipcard__back">
+        <div class="x-flip-card__back">
             <slot name="back"></slot>
         </div>
     </div>
@@ -72,7 +72,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.x-flipcard {
+.x-flip-card {
     transform-style: preserve-3d;
     position: relative;
     -webkit-perspective: 1000px;

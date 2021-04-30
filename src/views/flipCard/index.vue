@@ -10,8 +10,9 @@
                    class="flip-card">
             <template #front>
                 <div class="flip-card-content">
-                    正面
-                    <div @click="handleTurn">
+                    <div>正面</div>
+                    <div @click="handleTurn"
+                         class="mt-8-1">
                         <van-button size="small"
                                     round
                                     type="primary">点击翻转
@@ -21,8 +22,9 @@
             </template>
             <template #back>
                 <div class="flip-card-content">
-                    背面
-                    <div @click="handleTurn">
+                    <div>反面</div>
+                    <div @click="handleTurn"
+                         class="mt-8-1">
                         <van-button size="small"
                                     round
                                     type="info">点击翻转
@@ -72,6 +74,10 @@ export default {
         width: 100%;
         height: 100%;
         background: #ccc;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 }
 </style>
