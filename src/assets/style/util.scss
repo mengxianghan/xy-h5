@@ -57,12 +57,11 @@
             #{$prop}: 0 !important;
         }
     }
-
-    @each $multi in (2 3 5) {
-        @each $value in (1 2 3 4 5 6 7 8) {
-            .#{$class}-#{$multi}-#{$value} {
+    @each $value in (4, 5, 8) {
+        @each $multi in (1 2 3 4 5) {
+            .#{$class}-#{$value}-#{$multi} {
                 @each $prop in $property {
-                    #{$prop}: $multi * $value + px !important;
+                    #{$prop}: $value * $multi + px !important;
                 }
             }
         }
