@@ -51,12 +51,10 @@ export default {
             const current = item[this.activeIndex]
             if (box && box.scrollTo) {
                 const top = current.offsetTop - box.clientHeight / 2 + current.clientHeight / 2
-                if (top > 0) {
-                    box.scrollTo({
-                        top,
-                        behavior: 'smooth'
-                    })
-                }
+                box.scrollTo({
+                    top: top < 0 ? 0 : top,
+                    behavior: 'smooth'
+                })
             }
         },
         currentTime(val) {
