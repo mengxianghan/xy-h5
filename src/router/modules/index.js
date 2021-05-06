@@ -16,7 +16,15 @@ export default [
         name: 'video',
         component: () => import('@/views/video'),
         meta: {
-            title: '视频 Video'
+            title: '视频播放器 Video'
+        }
+    },
+    {
+        path: '/audio',
+        name: 'audio',
+        component: () => import('@/views/audio'),
+        meta: {
+            title: '音频播放器 Audio'
         }
     },
     {

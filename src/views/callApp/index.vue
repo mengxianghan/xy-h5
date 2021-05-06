@@ -19,7 +19,6 @@ import CallApp from 'callapp-lib'
 import {isQQ, isWeibo, isWeixin} from '@/utils/validate'
 
 export default {
-    name: 'index',
     data() {
         return {
             showGuideOpenBrowser: false, // 显示引导

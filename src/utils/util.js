@@ -34,11 +34,10 @@ export function toTree(list, options = {}) {
 }
 
 /**
- * guid
- *
+ * generateUUID
  * @returns {String}
  */
-export function guid() {
+export function generateUUID() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
         var r = Math.random() * 16 | 0,
             v = c == 'x' ? r : (r & 0x3 | 0x8)
@@ -47,12 +46,12 @@ export function guid() {
 }
 
 /**
- * 解析时间字符串
+ * 解析时间字符串，转成时间
  *
  * @param {Number} second
  * @return {String} 00:00 or 00:00:00
  */
-export function secondToTime(second) {
+export function secondsToTime(second) {
     second = second || 0
     if (second === 0 || second === Infinity || second.toString() === 'NaN') {
         return '00:00'
@@ -63,6 +62,21 @@ export function secondToTime(second) {
     const sec = Math.floor(second - hour * 3600 - min * 60)
     return (hour > 0 ? [hour, min, sec] : [0, min, sec]).map(add0).join(':')
 }
+
+/**
+ * 解析时间字符串，转成秒
+ * @param timeTxt
+ * @returns {number}
+ */
+export function timeToSeconds(timeTxt) {
+    const regRule = /(\d{2,3}(?=:)):(\d{2}(?=\.))\.(\d{2,3})/g
+    if (regRule.test(timeTxt)) {
+        return RegExp.$1 * 60 + RegExp.$2 * 1 + ('0.' + RegExp.$3) * 1
+    } else {
+        return -1
+    }
+}
+
 
 /**
  * 数据映射

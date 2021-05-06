@@ -38,7 +38,6 @@
 
 <script>
 export default {
-    name: 'index',
     data() {
         return {
             turn: false,

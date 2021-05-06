@@ -34,9 +34,7 @@
              * 返回
              */
             handleBack() {
-                this.$router.replace({
-                    name: 'diagnosis'
-                })
+
             }
         }
     }

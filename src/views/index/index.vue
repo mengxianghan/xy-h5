@@ -22,7 +22,8 @@ export default {
         return {
             list: [
                 {name: 'echart', title: '图表 Echart'},
-                {name: 'video', title: '视频 Video'},
+                {name: 'video', title: '视频播放器 Video'},
+                {name: 'audio', title: '音频播放器 Audio'},
                 {name: 'flipCard', title: '翻牌 FlipCard'},
                 {name: 'flipBook', title: '翻书 FlipBook'},
                 {name: 'callApp', title: '唤醒App CallApp'}
