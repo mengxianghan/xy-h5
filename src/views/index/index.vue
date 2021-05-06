@@ -7,14 +7,10 @@
 <template>
     <container>
         <van-cell-group :border="false">
-            <van-cell :to="{name:'echart'}"
-                      title="图表 Echart"
-                      is-link></van-cell>
-            <van-cell :to="{name:'video'}"
-                      title="视频 Video"
-                      is-link></van-cell>
-            <van-cell :to="{name:'flipCard'}"
-                      title="翻牌 FlipCard"
+            <van-cell v-for="(item,index) in list"
+                      :key="index"
+                      :to="{name:item.name}"
+                      :title="item.title"
                       is-link></van-cell>
         </van-cell-group>
     </container>
@@ -23,7 +19,14 @@
 <script>
 export default {
     data() {
-        return {}
+        return {
+            list: [
+                {name: 'echart', title: '图表 Echart'},
+                {name: 'video', title: '视频 Video'},
+                {name: 'flipCard', title: '翻牌 FlipCard'},
+                {name: 'flipBook', title: '翻书 FlipBook'}
+            ]
+        }
     },
     computed: {},
     watch: {},

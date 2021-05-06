@@ -42,7 +42,10 @@ const assetsCDN = {
             'https://cdn.jsdelivr.net/npm/lib-flexible@0.3.2/flexible.min.js',
             'https://cdn.jsdelivr.net/npm/video.js@7.12.0/dist/video.min.js',
             'https://res.wx.qq.com/open/js/jweixin-1.6.0.js',
-            'https://cdn.jsdelivr.net/npm/echarts@5.0.0/dist/echarts.min.js'
+            'https://cdn.jsdelivr.net/npm/echarts@5.0.0/dist/echarts.min.js',
+            'https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js',
+            'https://cdn.jsdelivr.net/npm/alloyfinger@0.1.16/alloy_finger.min.js',
+            '/plugins/turn/turn.min.js'
         ],
         production: [
             'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js',

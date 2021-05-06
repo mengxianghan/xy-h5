@@ -12,10 +12,12 @@
     "build:report": "vue-cli-service build --mode prod --report"
   },
   "dependencies": {
+    "alloyfinger": "^0.1.16",
     "axios": "^0.21.1",
     "callapp-lib2": "^2.1.9",
     "compare-versions": "^3.6.0",
     "core-js": "^3.6.4",
+    "jquery": "^3.6.0",
     "jschardet": "^2.1.1",
     "lib-flexible": "^0.3.2",
     "lodash": "^4.17.21",

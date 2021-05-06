@@ -17,5 +17,10 @@ export default [
         path: '/flipCard',
         name:'flipCard',
         component: () => import('@/views/flipCard')
+    },
+    {
+        path: '/flipBook',
+        name:'flipBook',
+        component: () => import('@/views/flipBook')
     }
 ]
