@@ -119,7 +119,7 @@ const actions = {
         img.src = imgUrl
         logo = document.createElement('h1')
         logo.style.display = 'none'
-        logo.id = 'shareLogoByQQ'
+        logo.id = 'ShareLogoByQQ'
         logo.appendChild(img)
         document.body.insertBefore(logo, document.body.firstChild)
     }
