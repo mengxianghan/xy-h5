@@ -6,6 +6,7 @@
  */
 
 import api from '@/api'
+import {isQQ} from '@/utils/validate'
 
 const state = {
     config: {}
@@ -28,7 +29,7 @@ const mutations = {
 const actions = {
     /**
      * 初始化微信配置
-     * @param url
+     * @param {string} url 转码后的 url
      */
     async init({commit}, url) {
         // 获取微信签名
@@ -49,10 +50,15 @@ const actions = {
         }
     },
     /**
-     * 分享
+     * 设置微信分享信息
      * @param config
+     *      @param {string} title 标题
+     *      @param {string} desc 描述
+     *      @param {string} link 分享链接
+     *      @param {string} imgUrl 图片地址
+     *      @param {function} success 成功回调
      */
-    share({}, config = {}) {
+    setShareInfoOfWeixin({}, config = {}) {
         wx.ready(function () {
             //分享给朋友，分享到QQ
             wx.updateAppMessageShareData({
@@ -84,6 +90,38 @@ const actions = {
                 }
             })
         })
+    },
+    /**
+     * 设置 QQ 分享信息
+     * @param config
+     *      @param {string} title 标题，非必填
+     *      @param {string} desc 描述文案，必填
+     *      @param {string} imgUrl 图片地址，必填
+     */
+    setShareInfoOfQQ({}, config = {}) {
+        const {title = '', desc = '', imgUrl = ''} = config
+        let logo = document.getElementById('shareByQQ'),
+            img = document.createElement('img'),
+            meta = document.querySelector('meta[name="description"]')
+        if (logo) logo.remove()
+        if (meta) meta.remove()
+
+        if (title) document.title = title
+
+        if (config.desc) {
+            meta = document.createElement('meta')
+            meta.name = 'description'
+            meta.content = desc
+            document.querySelector('head').appendChild(meta)
+        }
+
+        img = document.createElement('img')
+        img.src = imgUrl
+        logo = document.createElement('h1')
+        logo.style.display = 'none'
+        logo.id = 'shareLogoByQQ'
+        logo.appendChild(img)
+        document.body.insertBefore(logo, document.body.firstChild)
     }
 }
 
