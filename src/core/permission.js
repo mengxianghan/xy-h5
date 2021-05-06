@@ -3,8 +3,15 @@ import store from '@/store'
 import {isWeixin} from '@/utils/validate'
 
 router.beforeEach((to, from, next) => {
+    const {
+        meta: {
+            title = process.env.VUE_APP_TITLE
+        }
+    } = to
     const {href} = router.resolve(to)
     const url = location.origin + href
+
+    document.title = title
 
     // 微信
     if (isWeixin()) {
