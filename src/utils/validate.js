@@ -5,6 +5,7 @@
  * @description: 验证类
  */
 
+const userAgent = navigator.userAgent.toLowerCase()
 
 /**
  * 验证手机号
@@ -38,8 +39,25 @@ export function isUrl(url) {
  * @returns {boolean}
  */
 export function isWeixin() {
-    return /\bMicroMessenger\b/g.test(window.navigator.userAgent)
+    return /\bmicromessenger\b/g.test(userAgent)
 }
+
+/**
+ * 验证微博
+ * @return {*}
+ */
+export function isWeibo() {
+    return /weibo/g.test(userAgent)
+}
+
+/**
+ * 验证QQ
+ * @return {*}
+ */
+export function isQQ() {
+    return /qq\//g.test(userAgent)
+}
+
 
 /**
  * 验证 ios
