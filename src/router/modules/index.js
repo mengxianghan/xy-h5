@@ -50,5 +50,13 @@ export default [
         meta: {
             title: '唤醒App CallApp'
         }
+    },
+    {
+        path: '/list',
+        name: 'list',
+        component: () => import('@/views/list'),
+        meta: {
+            title: '列表 List'
+        }
     }
 ]

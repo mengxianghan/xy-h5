@@ -26,7 +26,8 @@ export default {
                 {name: 'audio', title: '音频播放器 Audio'},
                 {name: 'flipCard', title: '翻牌 FlipCard'},
                 {name: 'flipBook', title: '翻书 FlipBook'},
-                {name: 'callApp', title: '唤醒App CallApp'}
+                {name: 'callApp', title: '唤醒App CallApp'},
+                {name: 'list', title: '列表 List'},
             ]
         }
     },
