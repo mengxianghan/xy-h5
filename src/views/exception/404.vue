@@ -1,17 +1,18 @@
 <!--
- * @Author: 孟祥涵
- * @Date: 2020-12-08
- * @Description: 404
+ * @author: 孟祥涵
+ * @email: 1056811341@qq.com
+ * @date: 2020-12-08
+ * @description: 404
 -->
 <template>
     <container>
-        <empty image="/images/empty_nodata@2x.png"
+        <empty type="error"
                title="404"
                description="对不起，您访问的页面不存在">
             <template>
                 <van-button type="primary-gradient"
                             round
-                            @click="handleBack">返回
+                            @click="handleClick">返回
                 </van-button>
             </template>
         </empty>
@@ -19,29 +20,19 @@
 </template>
 
 <script>
-    export default {
-        data() {
-            return {}
-        },
-        computed: {},
-        watch: {},
-        created() {
-        },
-        mounted() {
-        },
-        methods: {
-            /**
-             * 返回
-             */
-            handleBack() {
-
-            }
-        }
+export default {
+    data() {
+        return {}
+    },
+    computed: {},
+    watch: {},
+    created() {},
+    mounted() {},
+    methods: {
+        handleClick() {}
     }
+}
 </script>
 
 <style lang="scss" scoped>
-    .van-button {
-        width: 140px;
-    }
 </style>

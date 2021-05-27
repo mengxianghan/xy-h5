@@ -7,6 +7,8 @@
 import compareVersions from 'compare-versions'
 import {setTitle as setAppTitle} from '@/utils/jsbridge'
 import {isInApp} from '@/utils/validate'
+import Qs from 'qs'
+import {parse} from 'url'
 
 export function toTree(list, options = {}) {
     const opts = {
@@ -203,4 +205,21 @@ export function setTitle(title) {
         // 不在app内部
         document.title = title
     }
+}
+
+/**
+ * 清理 query 参数
+ * @param url
+ * @param keys {String, Array}
+ */
+ export function clearQuery(url = location.href, keys = []) {
+    const {protocol, host, query} = parse(url, true)
+    if (keys instanceof Array) {
+        for (let key of keys) {
+            delete query[key]
+        }
+    } else {
+        delete query[keys]
+    }
+    return `${protocol}//${host}${Object.keys(query).length ? `?${Qs.stringify(query)}` : ''}`
 }

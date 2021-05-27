@@ -4,7 +4,7 @@
  * @Description: Empty
 -->
 <template>
-    <van-empty :image="image"
+    <van-empty v-bind="$attrs"
                class="x-empty">
         <div v-if="title || $slots.title"
              class="x-empty__title">
@@ -47,10 +47,8 @@ export default {
     },
     computed: {},
     watch: {},
-    created() {
-    },
-    mounted() {
-    },
+    created() {},
+    mounted() {},
     methods: {}
 }
 </script>
@@ -83,6 +81,12 @@ export default {
 
     &__bottom {
         margin-top: 48px;
+
+        ::v-deep {
+            .van-button {
+                min-width: 100px;
+            }
+        }
     }
 }
 </style>

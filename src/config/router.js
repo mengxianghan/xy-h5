@@ -18,5 +18,12 @@ export const constantRouterMap = [
         meta: {
             title: '404'
         }
+    },
+    {
+        path: '/exception/error',
+        component: () => import('@/views/exception/error'),
+        meta: {
+            title: 'error'
+        }
     }
 ]

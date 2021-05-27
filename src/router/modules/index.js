@@ -8,7 +8,8 @@ export default [
         name: 'echart',
         component: () => import('@/views/echart'),
         meta: {
-            title: '图表 Echart'
+            title: '图表 Echart',
+            requiredLogin: false
         }
     },
     {
@@ -16,7 +17,8 @@ export default [
         name: 'video',
         component: () => import('@/views/video'),
         meta: {
-            title: '视频播放器 Video'
+            title: '视频播放器 Video',
+            requiredLogin: false
         }
     },
     {
@@ -24,7 +26,8 @@ export default [
         name: 'audio',
         component: () => import('@/views/audio'),
         meta: {
-            title: '音频播放器 Audio'
+            title: '音频播放器 Audio',
+            requiredLogin: false
         }
     },
     {
@@ -32,7 +35,8 @@ export default [
         name: 'flipCard',
         component: () => import('@/views/flipCard'),
         meta: {
-            title: '翻牌 FlipCard'
+            title: '翻牌 FlipCard',
+            requiredLogin: false
         }
     },
     {
@@ -40,7 +44,8 @@ export default [
         name: 'flipBook',
         component: () => import('@/views/flipBook'),
         meta: {
-            title: '翻书 FlipBook'
+            title: '翻书 FlipBook',
+            requiredLogin: false
         }
     },
     {
@@ -48,7 +53,8 @@ export default [
         name: 'callApp',
         component: () => import('@/views/callApp'),
         meta: {
-            title: '唤醒App CallApp'
+            title: '唤醒App CallApp',
+            requiredLogin: false
         }
     },
     {
@@ -56,7 +62,8 @@ export default [
         name: 'list',
         component: () => import('@/views/list'),
         meta: {
-            title: '列表 List'
+            title: '列表 List',
+            requiredLogin: false
         }
     }
 ]
