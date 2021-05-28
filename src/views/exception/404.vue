@@ -26,10 +26,13 @@ export default {
     },
     computed: {},
     watch: {},
-    created() {},
-    mounted() {},
+    created() {
+    },
+    mounted() {
+    },
     methods: {
-        handleClick() {}
+        handleClick() {
+        }
     }
 }
 </script>

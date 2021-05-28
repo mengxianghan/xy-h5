@@ -19,7 +19,9 @@ const storageMap = [
     {key: 'token', type: 'session'},
     {key: 'userInfo', type: 'session'},
     {key: 'isLogin', type: 'session'},
-    {key: 'permission', type: 'session'}
+    {key: 'permission', type: 'session'},
+    {key: 'isAuth', type: 'session'},
+    {key: 'authType', type: 'session'}
 ]
 
 const storage = {}

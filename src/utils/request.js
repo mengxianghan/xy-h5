@@ -7,8 +7,8 @@
 
 import jschardet from 'jschardet'
 import axios from 'axios'
-import { merge } from 'lodash'
-import { Notify } from 'vant'
+import {merge} from 'lodash'
+import {Notify} from 'vant'
 
 const instance = axios.create()
 
@@ -26,7 +26,7 @@ instance.interceptors.request.use(req => {
  */
 instance.interceptors.response.use(res => {
     // 错误处理
-    const { code, msg } = response.data || {}
+    const {code, msg} = response.data || {}
     if (!['200'].includes(code)) {
         if (msg) {
             Notify({
@@ -83,8 +83,8 @@ class Http {
                 }, err => {
                     reject(err)
                 }).catch(err => {
-                    reject(err)
-                })
+                reject(err)
+            })
         })
     }
 

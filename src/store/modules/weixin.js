@@ -4,8 +4,6 @@
  * @date: 2021-01-24
  * @description: 微信
  */
-
-import api from '@/api'
 import router from '@/router'
 
 const state = {
@@ -34,7 +32,7 @@ const actions = {
     config({commit}, url) {
         return new Promise(async (resolve, reject) => {
             // 获取微信签名
-            const result = await api.weixin.getWxConfig({
+            const result = await window.$xy.api.weixin.getConfig({
                 url: encodeURIComponent(url)
             })
             const {code, data} = result
@@ -130,20 +128,6 @@ const actions = {
         logo.id = 'ShareLogoByQQ'
         logo.appendChild(img)
         document.body.insertBefore(logo, document.body.firstChild)
-    },
-    /**
-     * 微信登录
-     */
-    login({}, options = {}) {
-        const {appId, redirectUri, responseType, scope, state} = {
-            appId: '',
-            redirectUri: '',
-            responseType: 'code',
-            scope: 'snsapi_userinfo',
-            state: 'wxlogin',
-            ...options
-        }
-        window.location.href = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appId}&redirect_uri=${redirectUri}&response_type=${responseType}&scope=${scope}&state=${state}#wechat_redirect`
     }
 }
 

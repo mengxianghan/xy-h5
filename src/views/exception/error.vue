@@ -33,7 +33,8 @@ export default {
             return decodeURIComponent(this.$route.query?.description ?? '')
         }
     },
-    created() {},
+    created() {
+    },
     methods: {}
 }
 </script>

@@ -20,6 +20,7 @@
 
 <script>
 import pagination from '@/mixins/pagination'
+
 export default {
     mixins: [pagination],
     data() {
@@ -29,7 +30,8 @@ export default {
     },
     computed: {},
     watch: {},
-    created() {},
+    created() {
+    },
     mounted() {
         this.getList()
     },
@@ -41,10 +43,10 @@ export default {
             this.loading = true
             this.finished = false
             const {
-                pagination: { current, pageSize },
+                pagination: {current, pageSize},
                 searchForm
             } = this
-            const { codr, data } = await this.$xy.api.index
+            const {codr, data} = await this.$xy.api.index
                 .getList({
                     page: current,
                     pageSize,
