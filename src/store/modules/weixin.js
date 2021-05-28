@@ -52,6 +52,21 @@ const actions = {
         })
     },
     /**
+     * 微信授权
+     * @param options
+     */
+    auth({}, options = {}) {
+        const {appId, redirectUri, responseType, scope, state} = {
+            appId: '',
+            redirectUri: '',
+            responseType: 'code',
+            scope: 'snsapi_userinfo',
+            state: 'wxlogin',
+            ...options
+        }
+        window.location.href = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appId}&redirect_uri=${redirectUri}&response_type=${responseType}&scope=${scope}&state=${state}#wechat_redirect`
+    },
+    /**
      * 微信分享
      * @param options
      *      @param {string} title 标题

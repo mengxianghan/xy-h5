@@ -10,13 +10,17 @@ import storage from '@/utils/storage'
 const state = {
     isLogin: storage.getIsLogin(false),
     userInfo: storage.getUserInfo(null),
-    token: storage.getToken('')
+    token: storage.getToken(''),
+    isAuth: storage.getIsAuth(false),
+    authType: storage.getAuthType('')
 }
 
 const getters = {
     isLogin: state => state.isLogin,
     userInfo: state => state.userInfo,
-    token: state => state.token
+    token: state => state.token,
+    isAuth: state => state.isAuth,
+    authType: state => state.authType
 }
 
 const mutations = {
@@ -49,6 +53,26 @@ const mutations = {
     SET_TOKEN(state, token = '') {
         state.token = token
         token ? storage.setToken(token) : storage.removeToken()
+    },
+    /**
+     * 设置授权状态
+     * @param state
+     * @param isAuth
+     * @constructor
+     */
+    SET_IS_AUTH(state, isAuth = false) {
+        state.isAuth = isAuth
+        storage.setIsAuth(isAuth)
+    },
+    /**
+     * 设置授权类型
+     * @param state
+     * @param authType
+     * @constructor
+     */
+    SET_AUTH_TYPE(state, authType = '') {
+        state.authType = authType
+        storage.setAuthType(authType)
     }
 }
 

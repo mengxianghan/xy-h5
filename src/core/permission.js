@@ -44,10 +44,11 @@ router.beforeEach((to, from, next) => {
             // TODO: 登录逻辑
             // 判断是否微信浏览器
             if (isWeixin()) {
+                // 是微信浏览器使用微信授权
                 // 判断微信授权状态
                 if (code && state === 'wxauth') {
                     // 已授权
-                    // TODO: 获取用户信息后跳转响应页面
+                    // TODO: 执行获取授权信息登录等逻辑
 
                     // 清理 url 中的 code 和 state 参数，防止重复授权
                     window.location.href = clearQuery(location.href, ['code', 'state'])
@@ -66,14 +67,13 @@ router.beforeEach((to, from, next) => {
                         })
                     } else {
                         // 跳转授权
-                        store.dispatch('auth/weixin', {
+                        store.dispatch('weixin/auth', {
                             appId: process.env.VUE_APP_WX_APP_ID,
                             redirectUri: encodeURIComponent(url)
                         })
                     }
                 }
             }
-
         }
     } else {
         // 不需要登录
