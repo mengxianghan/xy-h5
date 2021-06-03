@@ -1,8 +1,3 @@
-/**
- * @Author: 孟祥涵
- * @Date: 2020-10-08
- * @Description: storage.js
- */
 import {upperFirst} from 'lodash'
 import Storage from 'xy-storage/src/storage'
 

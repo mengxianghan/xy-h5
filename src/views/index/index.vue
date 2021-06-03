@@ -1,9 +1,3 @@
-<!--
- * @author: 孟祥涵
- * @email: 1056811341@qq.com
- * @date: 2020-11-01
- * @description: index
--->
 <template>
     <container>
         <van-cell-group :border="false">

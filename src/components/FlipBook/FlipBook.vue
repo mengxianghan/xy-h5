@@ -1,9 +1,3 @@
-<!--
- * @author: 孟祥涵
- * @email: 1056811341@qq.com
- * @date: 2021-04-30
- * @description: 翻书，API参考：http://www.turnjs.com/
--->
 <template>
     <div>
         <div class="x-flip-book">

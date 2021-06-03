@@ -1,8 +1,3 @@
-<!--
- * @Author: 孟祥涵
- * @Date: 2020-11-18
- * @Description: Echart
--->
 <template>
     <div class="x-echart"
          ref="echart"></div>

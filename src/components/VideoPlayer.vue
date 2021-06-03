@@ -1,9 +1,3 @@
-<!--
- * @author: 孟祥涵
- * @email: 1056811341@qq.com
- * @date: 2020-11-01
- * @description: 视频播放器
--->
 <template>
     <div class="x-video-player">
         <video ref="VideoPlayer"

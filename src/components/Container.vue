@@ -1,9 +1,3 @@
-<!--
- * @author: 孟祥涵
- * @email: 1056811341@qq.com
- * @date: 2020-11-10
- * @description: Container.vue
--->
 <template>
     <div class="x-container"
          :style="styles">

@@ -1,9 +1,3 @@
-<!--
- * @author: 孟祥涵
- * @email: 1056811341@qq.com
- * @date: 2020-12-08
- * @description: 404
--->
 <template>
     <container>
         <empty type="error"

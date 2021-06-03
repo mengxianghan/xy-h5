@@ -1,8 +1,3 @@
-<!--
- * @Author: 孟祥涵
- * @Date: 2020-11-13
- * @Description: Empty
--->
 <template>
     <van-empty v-bind="$attrs"
                class="x-empty">

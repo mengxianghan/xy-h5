@@ -1,9 +1,3 @@
-<!--
- * @author: 孟祥涵
- * @email: 1056811341@qq.com
- * @date: 2021-05-06
- * @description: LeadToBrowser
--->
 <template>
     <van-popup :value="value"
                :close-on-click-overlay="false"
