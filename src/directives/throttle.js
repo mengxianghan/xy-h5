@@ -1,9 +1,3 @@
-/**
- * @author: 孟祥涵
- * @email: 1056811341@qq.com
- * @date: 2021-02-14
- * @description: 指令
- */
 import Vue from 'vue'
 
 /**
