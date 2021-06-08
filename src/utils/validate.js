@@ -74,11 +74,3 @@ export function isAndroid() {
 export function isEmail(email) {
     return /\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}/g.test(email)
 }
-
-
-/**
- * 判断是否在app内部的webview
- */
-export function isInApp() {
-    return /53zaixian/g.test(window.navigator.userAgent.toLocaleLowerCase())
-}

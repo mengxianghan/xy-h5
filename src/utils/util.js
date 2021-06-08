@@ -1,8 +1,5 @@
-import compareVersions from 'compare-versions'
-import {setTitle as setAppTitle} from '@/utils/jsbridge'
-import {isInApp} from '@/utils/validate'
 import Qs from 'qs'
-import {parse} from 'url'
+import { parse } from 'url'
 
 /**
  * 树形结构转线形结构
@@ -10,7 +7,7 @@ import {parse} from 'url'
  * @param {object} fields
  * @return {*[]}
  */
-export function treeToList(list = [], fields = {children: 'children'}) {
+export function treeToList(list = [], fields = { children: 'children' }) {
     let result = []
     if (!Array.isArray(list)) return result
     list.forEach(item => {
@@ -128,7 +125,7 @@ export function mapping(list, structure = {}, expand = {}, treeField) {
                 temp[key] = (typeof record !== 'undefined') && record !== '' ? record : ''
             }
         }
-        temp = expand ? {...temp, ...expand} : temp
+        temp = expand ? { ...temp, ...expand } : temp
         result.push(temp)
     })
     return result
@@ -140,7 +137,7 @@ export function mapping(list, structure = {}, expand = {}, treeField) {
  * @param {string | array} keys
  */
 export function clearQuery(url = location.href, keys = []) {
-    const {protocol, host, query} = parse(url, true)
+    const { protocol, host, query } = parse(url, true)
     if (keys instanceof Array) {
         for (let key of keys) {
             delete query[key]
@@ -158,90 +155,4 @@ export function clearQuery(url = location.href, keys = []) {
  */
 export function formatTextarea(content = '') {
     return content.replace(/\n|\r\n/g, '<br/>')
-}
-
-/**
- * 获取 app ua
- * @param {string} key
- */
-export function getAppUa(key = '') {
-    const ua = navigator.userAgent
-    if (isInApp() && key) {
-        const obj = Qs.parse(ua)
-        return obj[key] ?? ''
-    }
-    return ua
-}
-
-/**
- * 获取 APP 版本号
- * @return {string|string|string}
- */
-export function getAppVersion() {
-    if (isInApp()) {
-        return Qs.parse(navigator.userAgent)?.appVersion ?? '0.0.1'
-    }
-    return '0.0.1'
-}
-
-/**
- * 对象深度合并
- * @param obj1
- * @param obj2
- * @return {*}
- */
-export function deepMerge(obj1, obj2) {
-    let key
-    for (key in obj2) {
-        // 如果target(也就是obj1[key])存在，且是对象的话再去调用deepMerge，否则就是obj1[key]里面没这个对象，需要与obj2[key]合并
-        // 如果obj2[key]没有值或者值不是对象，此时直接替换obj1[key]
-        obj1[key] =
-            obj1[key] &&
-            obj1[key].toString() === '[object Object]' &&
-            (obj2[key] && obj2[key].toString() === '[object Object]')
-                ? deepMerge(obj1[key], obj2[key])
-                : (obj1[key] = obj2[key])
-    }
-    return obj1
-}
-
-/**
- * 对比版本号
- * @param version 待对比版本号
- * @param operator 符号 >、<、=
- * @return {boolean}
- */
-export function compareVersion(version = '1.03.02', operator = '>') {
-    if (isInApp()) {
-        const appVersion = getAppVersion()
-
-        // 版本号中不带 .
-        if (!(/\./g.test(appVersion))) {
-            // 移除版本号中的 .
-            version = version.replace(/\./g, '')
-        }
-
-        return compareVersions.compare(appVersion, version, operator)
-    } else {
-        return false
-    }
-}
-
-/**
- * 设置标题
- * @param title
- */
-export function setTitle(title) {
-    // 是否在app内部
-    if (isInApp()) {
-        // 在app内部
-        setAppTitle({
-            data: {
-                title
-            }
-        })
-    } else {
-        // 不在app内部
-        document.title = title
-    }
 }
