@@ -6,7 +6,6 @@
                 border: 0;
                 background-image: $button-primary-bg-gradient-color;
                 color: #fff;
-                //box-shadow: 0px 7px 6px 0px rgba(250, 100, 0, 0.14);
             }
 
             &.van-button--plain {
@@ -16,7 +15,7 @@
         }
     }
 
-    &--member {
+    &--vip {
         $text-color: #b27d3e;
 
         &:not(.van-button--plain) {
@@ -31,21 +30,10 @@
             color: $text-color;
         }
     }
-
-    &--disabled {
-        $bg-color: #f1f1f1;
-        $text-color: #c5cad4;
-
-        background: $bg-color !important;
-        border-color: $bg-color !important;
-        box-shadow: none !important;
-        color: $text-color !important;
-    }
 }
 
 // Dialog
 .van-dialog {
-
     &--round-button {
         .van-dialog {
             &__message {
@@ -81,44 +69,7 @@
     }
 }
 
-// Empty
-.van-empty {
-    &__image {
-        width: 170px;
-        height: 170px;
-    }
-
-    &__bottom {
-        margin-top: $spacing-md;
-    }
-
-    &__description {
-        color: #b2b2b2;
-        text-align: center;
-        line-height: 1.5;
-    }
-
-}
-
 // Image
 .van-image {
     vertical-align: middle;
-}
-
-// Overlay
-.van-overlay {
-    //background-color: rgba(0, 0, 0, .1);
-}
-
-// GoodsAction
-.van-goods-action {
-    &-button {
-        &--last {
-            margin-right: 16px;
-        }
-
-        &--first {
-            margin-left: 16px;
-        }
-    }
 }

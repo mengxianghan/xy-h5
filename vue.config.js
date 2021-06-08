@@ -11,7 +11,7 @@ const getAssetsCDN = (key, defaults = []) => {
     const data = assetsCDN[key]
     let res = data.env || defaults
     if (data[process.env.NODE_ENV]) {
-        res = res instanceof Array ? [...res, ...data[process.env.NODE_ENV]] : {...res, ...data[process.env.NODE_ENV]}
+        res = res instanceof Array ? [...res, ...data[process.env.NODE_ENV]] : { ...res, ...data[process.env.NODE_ENV] }
     }
     return res
 }
@@ -52,7 +52,7 @@ const assetsCDN = {
             'https://cdn.jsdelivr.net/npm/vuex@3.1.3/dist/vuex.min.js',
             'https://cdn.jsdelivr.net/npm/vue-router@3.1.6/dist/vue-router.min.js',
             'https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js',
-            'https://cdn.jsdelivr.net/npm/vant@2.12.13/lib/vant.min.js',
+            'https://cdn.jsdelivr.net/npm/vant@2.12.21/lib/vant.min.js',
             'https://cdn.jsdelivr.net/npm/jschardet@2.1.1/dist/jschardet.min.js',
             'https://cdn.jsdelivr.net/npm/dayjs@1.9.6/dayjs.min.js',
             'https://cdn.jsdelivr.net/npm/sa-sdk-javascript@1.16.9/sensorsdata.min.js',
@@ -112,9 +112,9 @@ module.exports = {
             .use('url-loader')
             .loader('url-loader')
             .tap(options => ({
-                    ...options,
-                    limit: 1024 /// 文件大小（低于1Kb才会base64编码）
-                })
+                ...options,
+                limit: 1024 /// 文件大小（低于1Kb才会base64编码）
+            })
             )
     },
     productionSourceMap: !isProd,
@@ -122,18 +122,15 @@ module.exports = {
         loaderOptions: {
             less: {
                 modifyVars: {
-                    // Color Palette
                     'primary': ' #ff6839',
-                    'green': '#0c8',
-                    'red': '#fe4a3b',
 
                     // Button
                     'button-primary-background-color': '@primary',
                     'button-primary-border-color': '@primary',
                     'button-large-height': '48px',
-                    'button-disabled-opacity': 1,
-                    'button-default-color': '#707070',
-                    'button-default-border-color': '#979797',
+
+                    // Cell
+                    'cell-vertical-padding': '12px',
 
                     // Dialog
                     'dialog-confirm-button-text-color': '@primary',

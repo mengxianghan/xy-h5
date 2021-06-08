@@ -11,7 +11,7 @@ export default {
     props: {
         background: {
             type: String,
-            default: ''
+            default: '#f8f8f8'
         }
     },
     data() {
@@ -25,10 +25,8 @@ export default {
         }
     },
     watch: {},
-    created() {
-    },
-    mounted() {
-    },
+    created() {},
+    mounted() {},
     methods: {}
 }
 </script>
