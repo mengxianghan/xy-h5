@@ -14,26 +14,26 @@
   "dependencies": {
     "alloyfinger": "^0.1.16",
     "axios": "^0.21.1",
-    "callapp-lib": "^3.4.0",
+    "callapp-lib": "^3.5.1",
     "compare-versions": "^3.6.0",
     "core-js": "^3.6.4",
     "deepmerge": "^4.2.2",
     "jquery": "^3.6.0",
-    "jschardet": "^2.1.1",
+    "jschardet": "^2.3.0",
     "lib-flexible": "^0.3.2",
     "lodash": "^4.17.21",
     "mockjs2": "^1.0.8",
     "qs": "^6.10.1",
-    "sa-sdk-javascript": "^1.16.9",
+    "sa-sdk-javascript": "^1.18.3",
     "url": "^0.11.0",
     "uuid": "^8.3.2",
-    "vant": "^2.12.21",
-    "video.js": "^7.12.0",
+    "vant": "^2.12.23",
+    "video.js": "^7.13.3",
     "vue": "^2.6.11",
     "vue-clipboard2": "^0.3.1",
     "vue-router": "^3.1.6",
     "vuex": "^3.1.3",
-    "xy-storage": "^1.0.5"
+    "xy-storage": "^2.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.0",
@@ -47,7 +47,7 @@
     "node-sass": "^4.13.1",
     "postcss-plugin-px2rem": "^0.8.1",
     "sass-loader": "^8.0.2",
-    "vconsole": "^3.4.1",
+    "vconsole": "^3.8.1",
     "vue-template-compiler": "^2.6.11"
   }
 }
