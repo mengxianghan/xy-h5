@@ -34,7 +34,8 @@ const assetsCDN = {
     },
     css: {
         env: [
-            'https://cdn.jsdelivr.net/npm/video.js@7.12.0/dist/video-js.min.css'
+            'https://cdn.jsdelivr.net/npm/video.js@7.12.0/dist/video-js.min.css',
+            //'https://cdn.jsdelivr.net/npm/pdfjs-dist@2.8.335/web/pdf_viewer.css'
         ]
     },
     js: {
@@ -45,7 +46,9 @@ const assetsCDN = {
             'https://cdn.jsdelivr.net/npm/echarts@5.0.0/dist/echarts.min.js',
             'https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js',
             'https://cdn.jsdelivr.net/npm/alloyfinger@0.1.16/alloy_finger.min.js',
-            '/plugins/turn/turn.min.js'
+            '/plugins/turn/turn.min.js',
+            'https://cdn.jsdelivr.net/npm/pdfjs-dist@2.8.335/build/pdf.min.js',
+            'https://cdn.jsdelivr.net/npm/pdfjs-dist@2.8.335/web/pdf_viewer.js'
         ],
         production: [
             'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js',

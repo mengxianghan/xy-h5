@@ -65,5 +65,14 @@ export default [
             title: '列表 List',
             requiredLogin: false
         }
+    },
+    {
+        path: '/pdfViewer',
+        name: 'pdfViewer',
+        component: () => import('@/views/pdfViewer'),
+        meta: {
+            title: 'Pdf预览 PdfViewer',
+            requiredLogin: false
+        }
     }
 ]
