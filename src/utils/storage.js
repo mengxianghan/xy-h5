@@ -29,7 +29,7 @@ storageMap.forEach(item => {
 
     // get
     storage[`get${upperFirst(item.key)}`] = (df = null) => {
-        return store[item.type].get(item.key, df = null)
+        return store[item.type].get(item.key, df)
     }
 
     // remove

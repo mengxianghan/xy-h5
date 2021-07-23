@@ -34,8 +34,7 @@ const assetsCDN = {
     },
     css: {
         env: [
-            'https://cdn.jsdelivr.net/npm/video.js@7.12.0/dist/video-js.min.css',
-            //'https://cdn.jsdelivr.net/npm/pdfjs-dist@2.8.335/web/pdf_viewer.css'
+            'https://cdn.jsdelivr.net/npm/video.js@7.12.0/dist/video-js.min.css'
         ]
     },
     js: {
