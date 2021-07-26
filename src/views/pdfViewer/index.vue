@@ -1,6 +1,11 @@
 <template>
     <container>
+        <van-progress v-if="loading"
+                      :percentage="percentage"
+                      :show-pivot="false"
+                      class="progress"/>
         <pdf-viewer :url="pdfUrl"
+                    @progress="onProgress"
                     @success="onSuccess"
                     @error="onError"></pdf-viewer>
     </container>
@@ -22,6 +27,9 @@ export default {
     mounted() {
     },
     methods: {
+        onProgress({loaded, total}) {
+            this.percentage = Number.parseInt(loaded / total * 100)
+        },
         onSuccess() {
             this.loading = false
         },
@@ -34,9 +42,13 @@ export default {
 
 <style lang="scss"
        scoped>
-.pdf-viewer--complete {
-    ::v-deep .x-pdf-viewer__main {
-        position: relative;
-    }
+.progress {
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0;
 }
 </style>

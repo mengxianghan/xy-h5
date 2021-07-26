@@ -57,7 +57,8 @@ export default {
                 linkService,
                 l10n,
                 useOnlyCssZoom: true,
-                textLayerMode: 0
+                textLayerMode: 0,
+                removePageBorders: true // 移除左右白边
             })
             linkService.setViewer(pdfViewer)
             const pdfHistory = new pdfjsViewer.PDFHistory({
