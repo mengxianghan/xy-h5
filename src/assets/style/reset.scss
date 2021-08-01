@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+}
+
+html,
+body,
+#app {
+    height: 100%;
+}
+
+body, #app {
+    font: normal normal normal 14px/1 $font-family;
+}
+
+i, b {
+    font-style: normal;
+}
+
+img, video, audio, iframe {
+    vertical-align: middle;
+}
+
+input, textarea {
+    -webkit-appearance: none;
+}
+
+input:-internal-autofill-previewed,
+input:-internal-autofill-selected {
+    transition: background-color 5000s ease-in-out 0s !important;
+}
