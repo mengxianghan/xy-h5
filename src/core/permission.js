@@ -1,10 +1,11 @@
 import router from '@/router'
+import NProgress from '@/utils/nprogress'
 
 router.beforeEach((to, from, next) => {
-    console.log('路由前置导航')
+    NProgress.start()
     next()
 })
 
 router.afterEach((to, from) => {
-    console.log('路由后置导航')
+    NProgress.done()
 })

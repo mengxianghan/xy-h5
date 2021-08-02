@@ -7,6 +7,20 @@ export default class Axios {
 
     constructor(options) {
         this.#axiosInstance = axios.create(options)
+        this.#setupInterceptors()
+    }
+
+    /**
+     * 拦截器
+     */
+    #setupInterceptors() {
+        this.#axiosInstance.interceptors.request.use((req) => {
+            return req
+        })
+
+        this.#axiosInstance.interceptors.response.use((res) => {
+            return res
+        })
     }
 
     get(config) {
