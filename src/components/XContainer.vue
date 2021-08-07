@@ -7,16 +7,17 @@
 
 <script>
 /**
- * @name Container
+ * @name XContainer
+ * @description 容器
  */
 import {computed} from 'vue'
 
 export default {
-    name: 'Container',
+    name: 'XContainer',
     props: {
         background: {
             type: String,
-            default: '#f7f7f7'
+            default: '#f8f8f8'
         }
     },
     setup(props) {

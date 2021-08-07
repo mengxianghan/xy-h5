@@ -5,12 +5,13 @@
 
 <script>
 /**
- * @name Chart
+ * @name XChart
+ * @description 图表
  */
 import {onMounted, ref, watch} from 'vue'
 
 export default {
-    name: 'Chart',
+    name: 'XChart',
     props: {
         option: {
             type: Object,

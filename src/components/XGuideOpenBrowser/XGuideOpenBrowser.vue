@@ -33,13 +33,13 @@
 
 <script>
 /**
- * @name GuideOpenBrowser
+ * @name XGuideOpenBrowser
  * @description 引导打开浏览器
  */
 import {ref} from 'vue'
 
 export default {
-    name: 'GuideOpenBrowser',
+    name: 'XGuideOpenBrowser',
     props: {
         modelValue: {
             type: Boolean,

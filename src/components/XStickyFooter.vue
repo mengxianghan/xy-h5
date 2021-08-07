@@ -10,12 +10,13 @@
 
 <script>
 /**
- * @name StickyFooter
+ * @name XStickyFooter
+ * @description 底部固定
  */
 import {ref, onMounted} from 'vue'
 
 export default {
-    name: 'StickyFooter',
+    name: 'XStickyFooter',
     setup(props, ctx) {
         const height = ref(0)
 

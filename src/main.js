@@ -10,6 +10,7 @@ import {createApp} from 'vue'
 import {setupRouter} from './router'
 import {setupStore} from './store'
 import {setupDirective} from '@/directives'
+import {setupConsole} from '@/utils/console'
 
 function bootstrap() {
     const app = createApp(App)
@@ -17,6 +18,7 @@ function bootstrap() {
     setupRouter(app)
     setupStore(app)
     setupDirective(app)
+    setupConsole()
 
     app.use(Vant)
 

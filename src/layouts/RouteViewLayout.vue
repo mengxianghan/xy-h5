@@ -1,12 +1,10 @@
 <template>
-    <container>
-        index
-    </container>
+    <router-view/>
 </template>
 
 <script>
 export default {
-    name: 'index',
+    name: 'RouteViewLayout',
     setup() {
     }
 }

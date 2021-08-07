@@ -1,5 +1,5 @@
-import {upperFirst} from 'lodash-es'
 import Storage from 'xy-storage'
+import {upperFirst} from 'lodash-es'
 
 const store = new Storage({
     namespace: process.env.VUE_APP_STORAGE_NAMESPACE
@@ -34,6 +34,11 @@ storageMap.forEach(item => {
     // remove
     storage[`remove${upperFirst(item.key)}`] = (attrs) => {
         return store[item.type].remove(item.key, item.attrs && attrs ? {...item.attrs, ...attrs} : item.attrs || attrs)
+    }
+
+    // clear
+    storage['clear'] = () => {
+        return store[item.type].clear()
     }
 })
 

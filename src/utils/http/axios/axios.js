@@ -1,12 +1,17 @@
 import axios from 'axios'
-import merge from 'deepmerge'
-import {stringify, parse} from 'qs'
 
 export default class Axios {
     #axiosInstance = null
+    #options = null
 
     constructor(options) {
-        this.#axiosInstance = axios.create(options)
+        this.#optioins = {
+            config: {},
+            requestOptions: {},
+            ...options ?? {}
+        }
+
+        this.#axiosInstance = axios.create(this.#options.config)
         this.#setupInterceptors()
     }
 
@@ -14,41 +19,33 @@ export default class Axios {
      * 拦截器
      */
     #setupInterceptors() {
-        this.#axiosInstance.interceptors.request.use((req) => {
-            return req
+        this.#axiosInstance.interceptors.request.use((config) => {
+            return config
+        }, (error) => {
+            return Promise.reject(error)
         })
 
-        this.#axiosInstance.interceptors.response.use((res) => {
-            return res
+        this.#axiosInstance.interceptors.response.use((response) => {
+            return response
+        }, (error) => {
+            return Promise.reject(error)
         })
     }
 
     get(config) {
-        return this.request({
-            ...config,
-            method: 'GET'
-        })
+        return this.request({...config, method: 'GET'})
     }
 
     post(config) {
-        return this.request({
-            ...config,
-            method: 'POST'
-        })
+        return this.request({...config, method: 'POST'})
     }
 
     put(config) {
-        return this.request({
-            ...config,
-            method: 'PUT'
-        })
+        return this.request({...config, method: 'PUT'})
     }
 
     delete(config) {
-        return this.request({
-            ...config,
-            method: 'DELETE'
-        })
+        return this.request({...config, method: 'DELETE'})
     }
 
     upload(config) {

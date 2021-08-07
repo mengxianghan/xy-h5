@@ -1,4 +1,5 @@
 import {createRouter, createWebHistory} from 'vue-router'
+import {constantRouterMap, notFoundRouter} from '@/config/router.config'
 
 const files = require.context('./modules', false, /\.js$/)
 const routes = []
@@ -9,7 +10,11 @@ files.keys().forEach(key => {
 
 const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
-    routes
+    routes: [
+        ...routes,
+        ...constantRouterMap,
+        notFoundRouter
+    ]
 })
 
 export function setupRouter(app) {

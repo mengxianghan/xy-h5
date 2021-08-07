@@ -1,0 +1,9 @@
+#nprogress {
+    .bar {
+        background: $color-primary;
+    }
+
+    .peg {
+        box-shadow: 0 0 0.26667rem $color-primary, 0 0 0.13333rem $color-primary;
+    }
+}
