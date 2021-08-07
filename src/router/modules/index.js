@@ -13,6 +13,14 @@ export default [
         meta: {},
         children: [
             {
+                path: 'chart',
+                name: 'chart',
+                component: () => import('@/views/example/chart'),
+                meta: {
+                    title: '图表 Chart'
+                }
+            },
+            {
                 path: 'flipCard',
                 name: 'flipCard',
                 component: () => import('@/views/example/flipCard'),

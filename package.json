@@ -20,6 +20,7 @@
     "qs": "^6.10.1",
     "url": "^0.11.0",
     "vant": "^3.1.5",
+    "vconsole": "^3.9.1",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0",
@@ -27,14 +28,12 @@
     "xy-storage": "^2.0.2"
   },
   "devDependencies": {
-    "@tailwindcss/postcss7-compat": "^2.2.7",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "sass": "~1.32.12",
-    "sass-loader": "^8.0.2",
-    "vconsole": "^3.9.1"
+    "sass-loader": "^8.0.2"
   }
 }

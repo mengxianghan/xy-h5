@@ -3,7 +3,9 @@
         <van-cell-group :border="false">
             <van-cell v-for="(item,index) in list"
                       :key="index"
-                      :to="{name:item.name}"
+                      :to="{
+                          name: item.name
+                      }"
                       :title="item.title"
                       is-link></van-cell>
         </van-cell-group>
@@ -23,7 +25,7 @@ export default {
     },
     setup() {
         const list = [
-            {name: 'echart', title: '图表 Echart'},
+            {name: 'chart', title: '图表 Chart'},
             {name: 'video', title: '视频播放器 Video'},
             {name: 'audio', title: '音频播放器 Audio'},
             {name: 'flipCard', title: '翻牌 FlipCard'},

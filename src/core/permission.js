@@ -3,6 +3,13 @@ import NProgress from '@/utils/nprogress'
 
 router.beforeEach((to, from, next) => {
     NProgress.start()
+
+    const {meta: {title}} = to
+
+    if (title) {
+        document.title = title
+    }
+
     next()
 })
 
