@@ -16,7 +16,7 @@ import {computed, ref, watch} from 'vue'
 export default {
     name: 'XFlipCard',
     props: {
-        valueModel: {
+        modelValue: {
             type: Boolean,
             default: false
         },
@@ -26,7 +26,7 @@ export default {
         }
     },
     setup(props) {
-        const count = ref(props.valueModel ? 0 : 1)
+        const count = ref(props.modelValue ? 0 : 1)
         const angle = computed(() => count.value * 180)
         const styles = computed(() => ({
             'transition': props.transition,
@@ -35,7 +35,7 @@ export default {
             'transform': `rotateY(${angle.value}deg)`
         }))
 
-        watch(() => props.valueModel, () => count.value += 1)
+        watch(() => props.modelValue, () => count.value += 1)
 
         return {
             count,

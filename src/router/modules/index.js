@@ -21,6 +21,22 @@ export default [
                 }
             },
             {
+                path: 'videoPlayer',
+                name: 'videoPlayer',
+                component: () => import('@/views/example/videoPlayer'),
+                meta: {
+                    title: '视频播放器 VideoPlayer'
+                }
+            },
+            {
+                path: 'audioPlayer',
+                name: 'audioPlayer',
+                component: () => import('@/views/example/audioPlayer'),
+                meta: {
+                    title: '音频播放器 AudioPlayer'
+                }
+            },
+            {
                 path: 'flipCard',
                 name: 'flipCard',
                 component: () => import('@/views/example/flipCard'),

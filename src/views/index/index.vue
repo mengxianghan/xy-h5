@@ -26,8 +26,8 @@ export default {
     setup() {
         const list = [
             {name: 'chart', title: '图表 Chart'},
-            {name: 'video', title: '视频播放器 Video'},
-            {name: 'audio', title: '音频播放器 Audio'},
+            {name: 'videoPlayer', title: '视频播放器 VideoPlayer'},
+            {name: 'audioPlayer', title: '音频播放器 AudioPlayer'},
             {name: 'flipCard', title: '翻牌 FlipCard'},
             {name: 'flipBook', title: '翻书 FlipBook'},
             {name: 'callApp', title: '唤醒App CallApp'},

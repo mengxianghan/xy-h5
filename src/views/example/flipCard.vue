@@ -1,6 +1,6 @@
 <template>
     <x-container>
-        <x-flip-card :valueModel="turn"
+        <x-flip-card :model-value="turn"
                      class="flip-card">
             <template #front>
                 <div class="flip-card-content">

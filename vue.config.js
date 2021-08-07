@@ -18,7 +18,9 @@ const assetsCDN = {
         production: {}
     },
     css: {
-        env: []
+        env: [
+            'https://cdn.jsdelivr.net/npm/video.js@7.14.3/dist/video-js.min.css'
+        ]
     },
     js: {
         env: [

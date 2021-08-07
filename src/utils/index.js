@@ -65,7 +65,7 @@ export function secondsToTime(second) {
     const hour = Math.floor(second / 3600)
     const min = Math.floor((second - hour * 3600) / 60)
     const sec = Math.floor(second - hour * 3600 - min * 60)
-    return (hour > 0 ? [hour, min, sec] : [0, min, sec]).map(add0).join(':')
+    return (hour > 0 ? [hour, min, sec] : [min, sec]).map(add0).join(':')
 }
 
 /**
