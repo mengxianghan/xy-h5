@@ -28,7 +28,8 @@ export default {
         function initData() {
             const {option} = props
             if (!option || !Object.keys(option).length) return
-            const chart = echarts.init(refChart.value)
+            echarts.registerTheme('xchart', {})
+            const chart = echarts.init(refChart.value, 'xchart')
             chart.setOption(option, true)
             ctx.emit('complete', chart)
         }
