@@ -43,6 +43,14 @@ export default [
                 meta: {
                     title: '翻牌 FlipCard'
                 }
+            },
+            {
+                path: 'list',
+                name: 'list',
+                component: () => import('@/views/example/list'),
+                meta: {
+                    title: '列表 List'
+                }
             }
         ]
     }

@@ -71,7 +71,7 @@ export default {
          * @param instance
          */
         function onReady(instance) {
-            instance.autoplay = true
+            instance.autoplay = false
             instance.src = '/static/1.mp3'
 
             // 可以播放

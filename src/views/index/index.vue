@@ -15,11 +15,12 @@
 <script>
 import XContainer from '@/components/XContainer'
 import XFlipCard from '@/components/XFlipCard'
-import {ref} from 'vue'
+import XStickyFooter from '@/components/XStickyFooter'
 
 export default {
     name: 'index',
     components: {
+        XStickyFooter,
         XFlipCard,
         XContainer
     },
@@ -29,10 +30,10 @@ export default {
             {name: 'videoPlayer', title: '视频播放器 VideoPlayer'},
             {name: 'audioPlayer', title: '音频播放器 AudioPlayer'},
             {name: 'flipCard', title: '翻牌 FlipCard'},
-            {name: 'flipBook', title: '翻书 FlipBook'},
-            {name: 'callApp', title: '唤醒App CallApp'},
-            {name: 'list', title: '列表 List'},
-            {name: 'pdfViewer', title: 'Pdf预览 PdfViewer'}
+            //{name: 'flipBook', title: '翻书 FlipBook'},
+            //{name: 'callApp', title: '唤醒App CallApp'},
+            {name: 'list', title: '列表 List'}
+            //{name: 'pdfViewer', title: 'Pdf预览 PdfViewer'}
         ]
 
         return {

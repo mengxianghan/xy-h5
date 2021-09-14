@@ -1,6 +1,6 @@
 <template>
     <x-container>
-        <x-chart :option="option"></x-chart>
+        <x-chart :options="options"></x-chart>
     </x-container>
 </template>
 
@@ -12,7 +12,7 @@ export default {
     name: 'chart',
     components: {XChart, XContainer},
     setup() {
-        const option = {
+        const options = {
             xAxis: {
                 type: 'category',
                 data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -27,7 +27,7 @@ export default {
         }
 
         return {
-            option
+            options
         }
     }
 }
