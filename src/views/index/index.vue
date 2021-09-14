@@ -7,6 +7,7 @@
                           name: item.name
                       }"
                       :title="item.title"
+                      :value="item.value"
                       is-link></van-cell>
         </van-cell-group>
     </x-container>
@@ -30,10 +31,10 @@ export default {
             {name: 'videoPlayer', title: '视频播放器 VideoPlayer'},
             {name: 'audioPlayer', title: '音频播放器 AudioPlayer'},
             {name: 'flipCard', title: '翻牌 FlipCard'},
-            //{name: 'flipBook', title: '翻书 FlipBook'},
-            //{name: 'callApp', title: '唤醒App CallApp'},
-            {name: 'list', title: '列表 List'}
-            //{name: 'pdfViewer', title: 'Pdf预览 PdfViewer'}
+            {name: 'flipBook', title: '翻书 FlipBook', value: '开发中'},
+            {name: 'callApp', title: '唤醒App CallApp', value: '开发中'},
+            {name: 'list', title: '列表 List'},
+            {name: 'pdfViewer', title: 'Pdf预览 PdfViewer', value: '开发中'}
         ]
 
         return {

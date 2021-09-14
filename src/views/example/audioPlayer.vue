@@ -16,8 +16,8 @@
         </div>
 
         <van-cell-group :border="false">
-            <van-cell title="播放时长">{{ secondsToTime(current) }}</van-cell>
-            <van-cell title="总时长">{{ secondsToTime(duration) }}</van-cell>
+            <van-cell title="播放时长">{{ toTime(current) }}</van-cell>
+            <van-cell title="总时长">{{ toTime(duration) }}</van-cell>
         </van-cell-group>
 
         <div :style="{padding: '24px'}">
@@ -39,7 +39,7 @@
 import XContainer from '@/components/XContainer'
 import XAudioPlayer from '@/components/XAudioPlayer'
 import {ref} from 'vue'
-import {secondsToTime} from '@/utils'
+import {toTime} from '@/utils/to'
 
 export default {
     name: 'audioPlayer',
@@ -131,7 +131,7 @@ export default {
             current,
             duration,
             paused,
-            secondsToTime
+            toTime
         }
     }
 }
