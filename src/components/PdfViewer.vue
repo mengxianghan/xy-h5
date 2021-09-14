@@ -126,9 +126,16 @@ export default {
 <style lang="scss"
        scoped>
 .x-pdf-viewer {
-    position: relative;
-
     &__main {
+        //position: absolute;
+        //left: 0;
+        //right: 0;
+        //top: 0;
+        //bottom: 0;
+        height: 100vh;
+        overflow: hidden;
+        overflow-y: auto;
+
         ::v-deep {
             .page {
                 box-sizing: content-box;

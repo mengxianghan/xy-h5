@@ -17,7 +17,7 @@ export default {
         return {
             percentage: 0,
             loading: true,
-            pdfUrl: '/static/1.pdf'
+            pdfUrl: 'https://resource-test.53zaixian.com/resource_test/back/files/pdf/f59642ab-4749-4e71-9161-ed5d9e5f9f38.pdf'
         }
     },
     computed: {},
