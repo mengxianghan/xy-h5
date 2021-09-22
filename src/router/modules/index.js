@@ -15,7 +15,7 @@ export default [
             {
                 path: 'chart',
                 name: 'chart',
-                component: () => import('@/views/example/chart'),
+                component: () => import('@/views/example/chart/index'),
                 meta: {
                     title: '图表 Chart'
                 }
@@ -23,7 +23,7 @@ export default [
             {
                 path: 'videoPlayer',
                 name: 'videoPlayer',
-                component: () => import('@/views/example/videoPlayer'),
+                component: () => import('@/views/example/videoPlayer/index'),
                 meta: {
                     title: '视频播放器 VideoPlayer'
                 }
@@ -31,7 +31,7 @@ export default [
             {
                 path: 'audioPlayer',
                 name: 'audioPlayer',
-                component: () => import('@/views/example/audioPlayer'),
+                component: () => import('@/views/example/audioPlayer/index'),
                 meta: {
                     title: '音频播放器 AudioPlayer'
                 }
@@ -39,7 +39,7 @@ export default [
             {
                 path: 'flipCard',
                 name: 'flipCard',
-                component: () => import('@/views/example/flipCard'),
+                component: () => import('@/views/example/flipCard/index'),
                 meta: {
                     title: '翻牌 FlipCard'
                 }
@@ -47,7 +47,7 @@ export default [
             {
                 path: 'list',
                 name: 'list',
-                component: () => import('@/views/example/list'),
+                component: () => import('@/views/example/list/index'),
                 meta: {
                     title: '列表 List'
                 }

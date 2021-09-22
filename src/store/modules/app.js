@@ -1,6 +1,10 @@
-const state = {}
+const state = {
+    complete: false // 初始化完成
+}
 
-const getters = {}
+const getters = {
+    complete: state => state.complete
+}
 
 const mutations = {}
 

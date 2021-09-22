@@ -3,29 +3,25 @@
         <van-cell-group :border="false">
             <van-cell v-for="(item,index) in list"
                       :key="index"
-                      :to="{
-                          name: item.name
-                      }"
                       :title="item.title"
                       :value="item.value"
-                      is-link></van-cell>
+                      is-link
+                      @click="handleClick(item)"></van-cell>
         </van-cell-group>
     </x-container>
 </template>
 
 <script>
 import XContainer from '@/components/XContainer'
-import XFlipCard from '@/components/XFlipCard'
-import XStickyFooter from '@/components/XStickyFooter'
+import {useRouter} from 'vue-router'
 
 export default {
     name: 'index',
     components: {
-        XStickyFooter,
-        XFlipCard,
         XContainer
     },
-    setup() {
+    setup(_, ctx) {
+        const router = useRouter()
         const list = [
             {name: 'chart', title: '图表 Chart'},
             {name: 'videoPlayer', title: '视频播放器 VideoPlayer'},
@@ -37,8 +33,18 @@ export default {
             {name: 'pdfViewer', title: 'Pdf预览 PdfViewer', value: '开发中'}
         ]
 
+        function handleClick(item) {
+            if (item.hasOwnProperty('value')) {
+                return
+            }
+            router.push({
+                name: item.name
+            })
+        }
+
         return {
-            list
+            list,
+            handleClick
         }
     }
 }

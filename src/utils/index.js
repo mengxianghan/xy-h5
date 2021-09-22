@@ -36,11 +36,6 @@ export function mapping(list, structure = {}, expand = {}, treeField) {
                 temp[key] = structureValue(item, index, array)
             } else {
                 // 其他类型
-                //if ((record instanceof Array) && record.length) {
-                //    temp[key] = mapping(record, structure, expand, treeField)
-                //} else {
-                //    temp[key] = (typeof record !== 'undefined') && record !== '' ? record : ''
-                //}
                 temp[key] = (typeof record !== 'undefined') && record !== '' ? record : ''
             }
         }
@@ -65,4 +60,17 @@ export function clearQuery(url = location.href, keys = []) {
         delete query[keys]
     }
     return `${protocol}//${host}${Object.keys(query).length ? `?${stringify(query)}` : ''}`
+}
+
+/**
+ * 深度合并
+ * @param src
+ * @param target
+ * @return {{}}
+ */
+export function deepMerge(src = {}, target = {}) {
+    for (let key in target) {
+        src[key] = src[key] && Object.prototype.toString.call(src[key]) === '[object Object]' ? deepMerge(src[key], target[key]) : src[key] = target[key]
+    }
+    return src
 }
